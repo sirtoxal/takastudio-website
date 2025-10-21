@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Taka Studio — Designing Worlds, Move by Move</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <meta name="description" content="Taka Studio is an indie game studio in Istanbul creating design-driven games. Our current project is HexaFootball, a turn-based football strategy game for PC.">
 
   <!-- Open Graph / Twitter -->
@@ -55,8 +57,10 @@
     .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
 
     /* Simple fade-up on scroll */
-    .reveal { opacity: 0; transform: translateY(12px); transition: .6s ease; }
-    .reveal.show { opacity: 1; transform: none; }
+/* Fallback: JS çalışmasa bile içerik görünsün */
+.reveal { opacity: 1; transform: none; transition: .6s ease; }
+.reveal.show { opacity: 1; transform: none; }
+
 
     /* Hex pattern */
     .hex-bg {
@@ -177,6 +181,30 @@
       "https://itch.io/"
     ]
   }
+    <script>
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  }
+
+  // reveal-on-scroll – tarayıcı desteklemese bile fallback
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.15 });
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    // Eski tarayıcılar için: hepsini göster
+    revealEls.forEach((el) => el.classList.add('show'));
+  }
+</script>
+
   </script>
 </body>
 </html>
+

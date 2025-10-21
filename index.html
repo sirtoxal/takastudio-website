@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taka Studio — Designing Worlds, Move by Move</title>
+  <meta name="description" content="Taka Studio is an indie game studio in Istanbul creating design-driven games. Our current project is HexaFootball, a turn-based football strategy game for PC.">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Taka Studio — Designing Worlds, Move by Move" />
+  <meta property="og:description" content="Indie game studio crafting design-driven experiences. Currently developing HexaFootball, a turn-based football strategy game for PC." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://takastudio.example" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (replace with your own icons) -->
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN (for quick, portable styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0C1B2A',
+            sea: '#0E6E6E',
+            sand: '#E5D3B3',
+            foam: '#CFE7E4',
+          },
+          fontFamily: {
+            display: ['Outfit', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
+          },
+          boxShadow: {
+            soft: '0 10px 25px rgba(0,0,0,.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Subtle grain background */
+    .grain { position: relative; }
+    .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
+
+    /* Simple fade-up on scroll */
+    .reveal { opacity: 0; transform: translateY(12px); transition: .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Hex pattern */
+    .hex-bg {
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-navy text-white antialiased">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <svg width="28" height="28" viewBox="0 0 64 64" class="shrink-0">
+          <path d="M4 40c8-8 22-8 28-20 2-4 4-8 8-8 6 0 10 6 10 12 0 16-20 26-34 26-6 0-10-2-12-10z" fill="#CFE7E4"/>
+          <path d="M20 48c10 0 24-6 28-16" stroke="#75BDB8" stroke-width="4" fill="none"/>
+        </svg>
+        <span class="font-display text-lg tracking-wide">Taka Studio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#games" class="hover:text-foam">Games</a>
+        <a href="#about" class="hover:text-foam">About</a>
+        <a href="#news" class="hover:text-foam">News</a>
+        <a href="#contact" class="hover:text-foam">Contact</a>
+        <a href="#wishlist" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
+          <span>Wishlist on Steam</span>
+        </a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-white/10 focus:outline-none" aria-label="Open Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-navy border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-3">
+        <a href="#games" class="block">Games</a>
+        <a href="#about" class="block">About</a>
+        <a href="#news" class="block">News</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#wishlist" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft">Wishlist on Steam</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="pt-24 sm:pt-28 lg:pt-32">
+    <div class="relative overflow-hidden grain">
+      <div class="absolute inset-0 hex-bg opacity-20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">Designing Worlds, <span class="text-foam">Move by Move</span>.</h1>
+            <p class="mt-5 text-white/80 max-w-xl">Taka Studio is an independent game studio based in Istanbul crafting design‑driven experiences. Our current project is <strong>HexaFootball</strong> — a turn‑based football strategy game for PC.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#games" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>
+              <a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl">Contact Us</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <!-- Hero visual placeholder -->
+            <div class="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-sea/40 to-foam/10 border border-white/10 overflow-hidden">
+              <svg viewBox="0 0 600 400" class="absolute inset-0 w-full h-full">
+                <defs>
+                  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#75BDB8"/>
+                    <stop offset="100%" stop-color="#0E6E6E"/>
+                  </linearGradient>
+                </defs>
+                <!-- Hex grid -->
+                <g opacity=".25" stroke="url(#g)">
+                  <path d="M50 50 l30 -17 l30 17 v34 l-30 17 l-30 -17z"/>
+                  <use href="#h"/>
+                </g>
+                <!-- Ball path lines -->
+                <path d="M80 320 C200 260, 300 260, 420 200" stroke="#CFE7E4" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="420" cy="200" r="10" fill="#CFE7E4"/>
+              </svg>
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="block w-full text-navy" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,64L48,69.3C96,75,192,85,288,96C384,107,480,117,576,117.3C672,117,768,107,864,112C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Games / HexaFootball -->
+  <section id="games" class="py-20 bg-gradient-to-b from-navy to-[#0d2236]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl">HexaFootball</h2>
+        <p class="mt-3 text-white/80 max-w-2xl">A turn‑based football strategy game for PC that blends tactical depth with the excitement of the beautiful game. Plan, pass, and outsmart opponents on a stylish hexagonal pitch.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6 reveal">
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/10]"></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/10]"></div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/10]"></div>
+      </div>
+      <div id="wishlist" class="mt-10 flex flex-wrap items-center gap-3 reveal">
+        <a href="#" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Add to your Steam Wishlist</a>
+        <span class="text-white/60 text-sm">Planned release: 2026 • Platform: PC (Steam)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl">About Taka Studio</h2>
+        <p class="mt-3 text-white/80">Based in Istanbul, Taka Studio is a small, ambitious team creating original, design-driven games with clarity and craft. The name <em>“Taka”</em> refers to a traditional small boat from Türkiye’s Black Sea coast — a symbol of exploration, resilience, and handmade quality.</p>
+        <ul class="mt-6 space-y-2 text-white/80">
+          <li>• Values: Creativity, Clarity, Collaboration, Craftsmanship</li>
+          <li>• Focus: PC-first strategy and systems-driven experiences</li>
+          <li>• Engine: Unreal Engine 5</li>
+        </ul>
+      </div>
+      <div class="reveal grid sm:grid-cols-3 gap-4">
+        <!-- Team cards -->
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Bilgehan</h3>
+          <p class="text-sm text-white/70">Game Designer & Project Manager</p>
+        </article>
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Eren Köse</h3>
+          <p class="text-sm text-white/70">Unreal Engine Developer</p>
+        </article>
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Bora</h3>
+          <p class="text-sm text-white/70">UI/UX & VFX Designer</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- News / Devlog -->
+  <section id="news" class="py-20 bg-[#0d2236]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl">News & Devlog</h2>
+        <p class="mt-3 text-white/80 max-w-2xl">Development updates, behind‑the‑scenes notes, and announcements.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Prototype Milestone</h3>
+          <p class="mt-2 text-white/70">We reached a core‑loop prototype for HexaFootball and began internal playtesting to validate pacing and clarity.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Art Direction Peek</h3>
+          <p class="mt-2 text-white/70">Exploring hex‑grid UI, motion lines, and a minimal palette inspired by the Black Sea.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Steam Page Prep</h3>
+          <p class="mt-2 text-white/70">Gathering captures, writing capsule copy, and preparing the wishlist campaign.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center">
+        <h2 class="font-display text-3xl sm:text-4xl">Contact</h2>
+        <p class="mt-3 text-white/80">Want to reach out about HexaFootball, press, or collaboration? Send a message below.</p>
+      </div>
+      <form class="mt-10 reveal grid gap-4" action="https://formspree.io/f/your-id" method="POST">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm mb-1" for="name">Name</label>
+            <input id="name" name="name" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1" for="email">Email</label>
+            <input id="email" type="email" name="email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60"></textarea>
+        </div>
+        <button type="submit" class="inline-flex justify-center items-center bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-white/10 bg-[#0b1724]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-white/60 text-sm">© <span id="year"></span> Taka Studio • Istanbul, Türkiye</p>
+      <div class="flex items-center gap-4 text-white/70">
+        <a href="#" aria-label="Steam" class="hover:text-foam">Steam</a>
+        <a href="#" aria-label="Twitter/X" class="hover:text-foam">X</a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-foam">LinkedIn</a>
+        <a href="#" aria-label="Itch.io" class="hover:text-foam">Itch.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    // simple reveal-on-scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach((el) => io.observe(el));
+  </script>
+
+  <!-- JSON-LD for basic SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Taka Studio",
+    "url": "https://takastudio.example",
+    "logo": "https://takastudio.example/assets/logo.png",
+    "sameAs": [
+      "https://store.steampowered.com/",
+      "https://x.com/",
+      "https://www.linkedin.com/",
+      "https://itch.io/"
+    ]
+  }
+  </script>
+</body>
+</html>

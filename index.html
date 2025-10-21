@@ -55,8 +55,7 @@
     .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
 
     /* Simple fade-up on scroll */
-    /* Fallback: JS çalışmasa bile içerik görünsün */
-    .reveal { opacity: 1; transform: none; transition: .6s ease; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: .6s ease; }
     .reveal.show { opacity: 1; transform: none; }
 
     /* Hex pattern */
@@ -71,7 +70,10 @@
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
-        <img src="assets/taka-logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm"/>
+        <svg width="28" height="28" viewBox="0 0 64 64" class="shrink-0">
+          <path d="M4 40c8-8 22-8 28-20 2-4 4-8 8-8 6 0 10 6 10 12 0 16-20 26-34 26-6 0-10-2-12-10z" fill="#CFE7E4"/>
+          <path d="M20 48c10 0 24-6 28-16" stroke="#75BDB8" stroke-width="4" fill="none"/>
+        </svg>
         <span class="font-display text-lg tracking-wide">Taka Studio</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -79,7 +81,7 @@
         <a href="#about" class="hover:text-foam">About</a>
         <a href="#news" class="hover:text-foam">News</a>
         <a href="#contact" class="hover:text-foam">Contact</a>
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
+        <a href="#wishlist" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
           <span>Wishlist on Steam</span>
         </a>
       </nav>
@@ -94,7 +96,7 @@
         <a href="#about" class="block">About</a>
         <a href="#news" class="block">News</a>
         <a href="#contact" class="block">Contact</a>
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft">Wishlist on Steam<\/a>
+        <a href="#wishlist" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft">Wishlist on Steam</a>
       </div>
     </div>
   </header>
@@ -109,14 +111,29 @@
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">Designing Worlds, <span class="text-foam">Move by Move</span>.</h1>
             <p class="mt-5 text-white/80 max-w-xl">Taka Studio is an independent game studio based in Istanbul crafting design‑driven experiences. Our current project is <strong>HexaFootball</strong> — a turn‑based football strategy game for PC.</p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="https://takastudio-website.vercel.app/#games" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>
+              <a href="#games" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>
               <a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl">Contact Us</a>
             </div>
           </div>
           <div class="reveal">
-            <!-- Hero visual -->
-            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-soft bg-white/5">
-              <img src="assets/hexafb-hero.jpg" alt="HexaFootball illustration" class="absolute inset-0 w-full h-full object-cover"/>
+            <!-- Hero visual placeholder -->
+            <div class="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-sea/40 to-foam/10 border border-white/10 overflow-hidden">
+              <svg viewBox="0 0 600 400" class="absolute inset-0 w-full h-full">
+                <defs>
+                  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#75BDB8"/>
+                    <stop offset="100%" stop-color="#0E6E6E"/>
+                  </linearGradient>
+                </defs>
+                <!-- Hex grid -->
+                <g opacity=".25" stroke="url(#g)">
+                  <path d="M50 50 l30 -17 l30 17 v34 l-30 17 l-30 -17z"/>
+                  <use href="#h"/>
+                </g>
+                <!-- Ball path lines -->
+                <path d="M80 320 C200 260, 300 260, 420 200" stroke="#CFE7E4" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="420" cy="200" r="10" fill="#CFE7E4"/>
+              </svg>
               <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy"></div>
             </div>
           </div>
@@ -141,7 +158,7 @@
         <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/10]"></div>
       </div>
       <div id="wishlist" class="mt-10 flex flex-wrap items-center gap-3 reveal">
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Add to your Steam Wishlist<\/a>
+        <a href="#" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Add to your Steam Wishlist</a>
         <span class="text-white/60 text-sm">Planned release: 2026 • Platform: PC (Steam)</span>
       </div>
     </div>
@@ -161,12 +178,49 @@
       </div>
       <div class="reveal grid sm:grid-cols-3 gap-4">
         <!-- Team cards -->
-              </div>
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Bilgehan</h3>
+          <p class="text-sm text-white/70">Game Designer & Project Manager</p>
+        </article>
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Eren Köse</h3>
+          <p class="text-sm text-white/70">Unreal Engine Developer</p>
+        </article>
+        <article class="col-span-3 sm:col-span-1 rounded-2xl border border-white/10 bg-white/5 p-5">
+          <h3 class="font-display text-xl">Bora</h3>
+          <p class="text-sm text-white/70">UI/UX & VFX Designer</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- News / Devlog -->
-  
+  <section id="news" class="py-20 bg-[#0d2236]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl">News & Devlog</h2>
+        <p class="mt-3 text-white/80 max-w-2xl">Development updates, behind‑the‑scenes notes, and announcements.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Prototype Milestone</h3>
+          <p class="mt-2 text-white/70">We reached a core‑loop prototype for HexaFootball and began internal playtesting to validate pacing and clarity.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Art Direction Peek</h3>
+          <p class="mt-2 text-white/70">Exploring hex‑grid UI, motion lines, and a minimal palette inspired by the Black Sea.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+          <h3 class="font-display text-xl">Steam Page Prep</h3>
+          <p class="mt-2 text-white/70">Gathering captures, writing capsule copy, and preparing the wishlist campaign.</p>
+          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" class="py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,11 +228,7 @@
         <h2 class="font-display text-3xl sm:text-4xl">Contact</h2>
         <p class="mt-3 text-white/80">Want to reach out about HexaFootball, press, or collaboration? Send a message below.</p>
       </div>
-      <form class="mt-10 reveal grid gap-4" action="https://formsubmit.co/studiotakagames@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_subject" value="New message from takastudio.com"/>
-        <input type="hidden" name="_next" value="https://takastudio-website.vercel.app/#contact"/>
+      <form class="mt-10 reveal grid gap-4" action="https://formspree.io/f/your-id" method="POST">
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm mb-1" for="name">Name</label>
@@ -203,9 +253,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
       <p class="text-white/60 text-sm">© <span id="year"></span> Taka Studio • Istanbul, Türkiye</p>
       <div class="flex items-center gap-4 text-white/70">
-        <a href="https://x.com/takagamestudio" aria-label="Twitter/X" class="hover:text-foam" target="_blank" rel="noopener">X</a>
-        <a href="https://www.linkedin.com/company/taka-game-studio" aria-label="LinkedIn" class="hover:text-foam" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://discord.gg/9uWpzF4U" aria-label="Discord" class="hover:text-foam" target="_blank" rel="noopener">Discord</a>
+        <a href="#" aria-label="Steam" class="hover:text-foam">Steam</a>
+        <a href="#" aria-label="Twitter/X" class="hover:text-foam">X</a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-foam">LinkedIn</a>
+        <a href="#" aria-label="Itch.io" class="hover:text-foam">Itch.io</a>
       </div>
     </div>
   </footer>
@@ -221,16 +272,14 @@
       menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
 
-    // reveal-on-scroll – tarayıcı desteklemese bile fallback
+    // simple reveal-on-scroll
     const revealEls = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('show'); });
-      }, { threshold: 0.15 });
-      revealEls.forEach((el) => io.observe(el));
-    } else {
-      revealEls.forEach((el) => el.classList.add('show'));
-    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach((el) => io.observe(el));
   </script>
 
   <!-- JSON-LD for basic SEO -->

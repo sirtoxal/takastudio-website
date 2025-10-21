@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Taka Studio — Designing Worlds, Move by Move</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <meta name="description" content="Taka Studio is an indie game studio in Istanbul creating design-driven games. Our current project is HexaFootball, a turn-based football strategy game for PC.">
 
   <!-- Open Graph / Twitter -->
@@ -57,10 +55,9 @@
     .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
 
     /* Simple fade-up on scroll */
-/* Fallback: JS çalışmasa bile içerik görünsün */
-.reveal { opacity: 1; transform: none; transition: .6s ease; }
-.reveal.show { opacity: 1; transform: none; }
-
+    /* Fallback: JS çalışmasa bile içerik görünsün */
+    .reveal { opacity: 1; transform: none; transition: .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
 
     /* Hex pattern */
     .hex-bg {
@@ -74,14 +71,19 @@
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
-        <img src="assets/taka-logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm"/>a>
+        <img src="assets/taka-logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm"/>
+        <span class="font-display text-lg tracking-wide">Taka Studio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#games" class="hover:text-foam">Games</a>
         <a href="#about" class="hover:text-foam">About</a>
         <a href="#news" class="hover:text-foam">News</a>
         <a href="#contact" class="hover:text-foam">Contact</a>
         <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
-          <span<a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
           <span>Wishlist on Steam</span>
-        </a>ia-label="Open Menu">
+        </a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-white/10 focus:outline-none" aria-label="Open Menu">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -92,7 +94,13 @@
         <a href="#about" class="block">About</a>
         <a href="#news" class="block">News</a>
         <a href="#contact" class="block">Contact</a>
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-<a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft">Wishlist on Steam<\/a>:pt-32">
+        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft">Wishlist on Steam<\/a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="pt-24 sm:pt-28 lg:pt-32">
     <div class="relative overflow-hidden grain">
       <div class="absolute inset-0 hex-bg opacity-20"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
@@ -101,14 +109,31 @@
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">Designing Worlds, <span class="text-foam">Move by Move</span>.</h1>
             <p class="mt-5 text-white/80 max-w-xl">Taka Studio is an independent game studio based in Istanbul crafting design‑driven experiences. Our current project is <strong>HexaFootball</strong> — a turn‑based football strategy game for PC.</p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="https://takastudio-website.vercel.app/#games" class="inline-flex items-center gap-2 bg-sea<a href="https://takastudio-website.vercel.app/#games" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>nter gap-2 bg-w<a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl">Contact Us</a>veal">
+              <a href="https://takastudio-website.vercel.app/#games" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>
+              <a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl">Contact Us</a>
+            </div>
+          </div>
+          <div class="reveal">
             <!-- Hero visual -->
-            <div class="relative aspect-<!-- Hero visual -->
             <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-soft bg-white/5">
               <img src="assets/hexafb-hero.jpg" alt="HexaFootball illustration" class="absolute inset-0 w-full h-full object-cover"/>
               <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy"></div>
             </div>
-          </div>>A turn‑based football strategy game for PC that blends tactical depth with the excitement of the beautiful game. Plan, pass, and outsmart opponents on a stylish hexagonal pitch.</p>
+          </div>
+        </div>
+      </div>
+      <svg class="block w-full text-navy" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,64L48,69.3C96,75,192,85,288,96C384,107,480,117,576,117.3C672,117,768,107,864,112C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Games / HexaFootball -->
+  <section id="games" class="py-20 bg-gradient-to-b from-navy to-[#0d2236]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl">HexaFootball</h2>
+        <p class="mt-3 text-white/80 max-w-2xl">A turn‑based football strategy game for PC that blends tactical depth with the excitement of the beautiful game. Plan, pass, and outsmart opponents on a stylish hexagonal pitch.</p>
       </div>
       <div class="mt-10 grid md:grid-cols-3 gap-6 reveal">
         <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/10]"></div>
@@ -127,7 +152,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
       <div class="reveal">
         <h2 class="font-display text-3xl sm:text-4xl">About Taka Studio</h2>
-        <p class="mt-3 text-white/80">Based in Istanbul, Taka Studio is a small, ambitious team creating original, design-driven games with clarity and craft. The name <em>“Taka”</em> refers to a tradit<a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Add to your Steam Wishlist<\/a>space-y-2 text-white/80">
+        <p class="mt-3 text-white/80">Based in Istanbul, Taka Studio is a small, ambitious team creating original, design-driven games with clarity and craft. The name <em>“Taka”</em> refers to a traditional small boat from Türkiye’s Black Sea coast — a symbol of exploration, resilience, and handmade quality.</p>
+        <ul class="mt-6 space-y-2 text-white/80">
           <li>• Values: Creativity, Clarity, Collaboration, Craftsmanship</li>
           <li>• Focus: PC-first strategy and systems-driven experiences</li>
           <li>• Engine: Unreal Engine 5</li>
@@ -151,19 +177,60 @@
       <form class="mt-10 reveal grid gap-4" action="https://formsubmit.co/studiotakagames@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false"/>
         <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_subject" value="New messag/div>
+        <input type="hidden" name="_subject" value="New message from takastudio.com"/>
+        <input type="hidden" name="_next" value="https://takastudio-website.vercel.app/#contact"/>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm mb-1" for="name">Name</label>
+            <input id="name" name="name" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1" for="email">Email</label>
+            <input id="email" type="email" name="email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
+          </div>
+        </div>
         <div>
-          <label class="block text-sm mb-1" fst.toggle('hidden'));
+          <label class="block text-sm mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60"></textarea>
+        </div>
+        <button type="submit" class="inline-flex justify-center items-center bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-white/10 bg-[#0b1724]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-white/60 text-sm">© <span id="year"></span> Taka Studio • Istanbul, Türkiye</p>
+      <div class="flex items-center gap-4 text-white/70">
+        <a href="https://x.com/takagamestudio" aria-label="Twitter/X" class="hover:text-foam" target="_blank" rel="noopener">X</a>
+        <a href="https://www.linkedin.com/company/taka-game-studio" aria-label="LinkedIn" class="hover:text-foam" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://discord.gg/9uWpzF4U" aria-label="Discord" class="hover:text-foam" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS -->
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
 
-    // simple reveal-on-scroll
+    // reveal-on-scroll – tarayıcı desteklemese bile fallback
     const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach((el) => io.observe(el));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('show'); });
+      }, { threshold: 0.15 });
+      revealEls.forEach((el) => io.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('show'));
+    }
   </script>
 
   <!-- JSON-LD for basic SEO -->
@@ -181,30 +248,6 @@
       "https://itch.io/"
     ]
   }
-    <script>
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  }
-
-  // reveal-on-scroll – tarayıcı desteklemese bile fallback
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('show'); });
-    }, { threshold: 0.15 });
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    // Eski tarayıcılar için: hepsini göster
-    revealEls.forEach((el) => el.classList.add('show'));
-  }
-</script>
-
   </script>
 </body>
 </html>
-

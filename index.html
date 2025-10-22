@@ -330,55 +330,44 @@
     }
   });
 </script>
+
 <script>
   const HEADER_OFFSET = 60;
 
-  function scrollToWithOffset(id) {
-    const el = document.querySelector(id);
+  function smoothScrollToContact() {
+    const el = document.querySelector('#contact');
     if (!el) return;
 
-    const targetY = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    // 1. ölçüm
+    const t1 = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
 
-    const html = document.documentElement;
-    const prevBehavior = getComputedStyle(html).scrollBehavior;
-    html.style.scrollBehavior = 'auto';
+    // Ufak bir gecikmeden sonra smooth scroll (layout otursun)
+    setTimeout(() => {
+      window.scrollTo({ top: t1, behavior: 'smooth' });
 
-    let tries = 0;
-    const maxTries = 6;
-    const stepDelay = 100;
-
-    const attempt = () => {
-      window.scrollTo({ top: targetY });
-      tries++;
-
-      const nowTop = el.getBoundingClientRect().top - HEADER_OFFSET;
-      const closeEnough = Math.abs(nowTop) < 4;
-
-      if (!closeEnough && tries < maxTries) {
-        setTimeout(attempt, stepDelay);
-      } else {
-// Smooth scroll’u garantiye al
-setTimeout(() => {
-  html.style.scrollBehavior = 'smooth';
-  window.scrollTo({ top: targetY, behavior: 'smooth' });
-}, 100);
-
-      }
-    };
-
-    requestAnimationFrame(attempt);
+      // 2. ölçüm: font/görsel tam yüklendiyse konum değişmiş olabilir
+      setTimeout(() => {
+        const t2 = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+        // Hedef sapmışsa tekrar SMOOTH uygula
+        if (Math.abs(t2 - window.pageYOffset) > 4) {
+          window.scrollTo({ top: t2, behavior: 'smooth' });
+        }
+      }, 350);
+    }, 120);
   }
 
-  document.querySelectorAll('a[href="#contact"]').forEach((a) => {
+  // Hem üst menüde hem hero’da #contact linklerini yakala
+  document.querySelectorAll('a[href="#contact"]').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      scrollToWithOffset('#contact');
+      smoothScrollToContact();
     });
   });
 
+  // Sayfa #contact ile açılırsa
   window.addEventListener('load', () => {
     if (location.hash === '#contact') {
-      requestAnimationFrame(() => scrollToWithOffset('#contact'));
+      setTimeout(smoothScrollToContact, 150);
     }
   });
 </script>
@@ -386,6 +375,7 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
 
 

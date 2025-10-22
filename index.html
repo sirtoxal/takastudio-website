@@ -331,28 +331,58 @@
   });
 </script>
 <script>
-  // Header yüksekliği kadar ofsetli kaydır (sen 60px demiştin)
   const HEADER_OFFSET = 60;
 
   function scrollToWithOffset(id) {
     const el = document.querySelector(id);
     if (!el) return;
-    const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    const targetY = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+
+    const html = document.documentElement;
+    const prevBehavior = getComputedStyle(html).scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+
+    let tries = 0;
+    const maxTries = 6;
+    const stepDelay = 100;
+
+    const attempt = () => {
+      window.scrollTo({ top: targetY });
+      tries++;
+
+      const nowTop = el.getBoundingClientRect().top - HEADER_OFFSET;
+      const closeEnough = Math.abs(nowTop) < 4;
+
+      if (!closeEnough && tries < maxTries) {
+        setTimeout(attempt, stepDelay);
+      } else {
+        html.style.scrollBehavior = prevBehavior || 'smooth';
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
+    };
+
+    requestAnimationFrame(attempt);
   }
 
-  // Hem üst menüdeki hem hero’daki Contact linklerini yakala
   document.querySelectorAll('a[href="#contact"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      // İlk tıklamada layout otursun diye minicik gecikme
-      setTimeout(() => scrollToWithOffset('#contact'), 50);
+      scrollToWithOffset('#contact');
     });
+  });
+
+  window.addEventListener('load', () => {
+    if (location.hash === '#contact') {
+      requestAnimationFrame(() => scrollToWithOffset('#contact'));
+    }
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 

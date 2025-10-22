@@ -293,8 +293,21 @@
     ]
   }
   </script>
+  <script>
+  // Sadece ilk sayfada geçiş yapsın
+  let hasScrolled = false;
+  window.addEventListener('scroll', () => {
+    if (hasScrolled) return; // sadece 1 kez çalışsın
+    if (window.scrollY > window.innerHeight * 0.2) { // biraz kaydırınca tetiklensin
+      hasScrolled = true;
+      document.querySelector('#games').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
 

@@ -235,11 +235,14 @@
       <div class="reveal text-center">
         <h2 class="font-display text-3xl sm:text-4xl">Contact</h2>
         <p class="mt-3 text-white/80">
-  Want to reach out about HexaFootball, press, or collaboration? Send a message below — or contact us directly at 
-  <a href="mailto:studiotakagames@gmail.com" class="text-foam hover:underline">
-    studiotakagames@gmail.com
-  </a>.
+  Want to reach out about HexaFootball, press, or collaboration? Send a message below - or contact us directly at 
+  <span id="emailCopy"
+        class="text-foam hover:underline cursor-pointer select-all">
+    info@takastudio.games
+  </span>.
+  <span id="copyMsg" class="ml-2 text-green-400 hidden">Copied!</span>
 </p>
+
 
       </div>
 <form id="contactForm" class="mt-10 reveal grid gap-4"
@@ -456,9 +459,25 @@ lightbox.addEventListener("click", (e) => {
 });
 </script>
 
+  <script>
+const emailEl = document.getElementById("emailCopy");
+const copyMsg = document.getElementById("copyMsg");
+
+emailEl.addEventListener("click", () => {
+  navigator.clipboard.writeText(emailEl.textContent).then(() => {
+    copyMsg.classList.remove("hidden");
+
+    setTimeout(() => {
+      copyMsg.classList.add("hidden");
+    }, 1500);
+  });
+});
+</script>
+
 
 </body>
 </html>
+
 
 
 

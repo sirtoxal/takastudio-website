@@ -160,15 +160,15 @@
       </div>
       <div class="mt-10 grid md:grid-cols-3 gap-6 reveal">
   <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/9]">
-    <img src="SS.png" alt="HexaFootball screenshot 1" class="w-full h-full object-cover" />
+    <img src="SS.png" class="gallery-img w-full h-full object-cover cursor-pointer" data-index="0" />
   </div>
 
   <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/9]">
-    <img src="Ekran görüntüsü 2025-09-26 170943.png" alt="HexaFootball screenshot 2" class="w-full h-full object-cover" />
+    <img src="Ekran görüntüsü 2025-09-26 170943.png" class="gallery-img w-full h-full object-cover cursor-pointer" data-index="1" />
   </div>
 
   <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/9]">
-    <img src="Ekran görüntüsü 2025-08-26 142223.png" alt="HexaFootball screenshot 3" class="w-full h-full object-cover" />
+    <img src="Ekran görüntüsü 2025-08-26 142223.png" class="gallery-img w-full h-full object-cover cursor-pointer" data-index="2" />
   </div>
 </div>
 
@@ -412,10 +412,48 @@
     });
   });
 </script>
+<div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+  <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-xl shadow-soft cursor-pointer">
+</div>
+
+  <script>
+const images = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+let currentIndex = 0;
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    currentIndex = parseInt(img.dataset.index);
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightboxImg.src = images[currentIndex].src;
+  lightbox.classList.remove("hidden");
+  lightbox.classList.add("flex");
+}
+
+lightboxImg.addEventListener("click", () => {
+  currentIndex++;
+  if (currentIndex >= images.length) currentIndex = 0;
+  openLightbox();
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  }
+});
+</script>
 
 
 </body>
 </html>
+
 
 
 

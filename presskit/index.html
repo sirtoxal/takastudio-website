@@ -31,8 +31,7 @@
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>');
       mix-blend-mode: overlay;
     }
-    /* Increased scroll-margin to account for the fixed header */
-    section { scroll-margin-top: 120px; }
+    section { scroll-margin-top: 140px; }
     .gallery-img { cursor: zoom-in; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .gallery-img:hover { opacity: 0.9; transform: scale(1.02); }
     
@@ -51,13 +50,17 @@
       
       <a href="https://takastudio.games" class="flex items-center gap-2 hover:text-sea transition-all group">
         <svg class="group-hover:scale-110 transition-transform" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        Home
+        HOME
       </a>
 
       <nav class="flex gap-4 items-center">
-        <a href="https://www.takastudio.games/presskit" class="hover:text-sea transition-colors text-white">English</a>
+        <a href="https://www.takastudio.games/presskit" class="hover:text-sea transition-colors text-white">ENGLISH</a>
         <span class="opacity-10">|</span>
-        <a href="https://www.takastudio.games/presskit/tr" class="hover:text-sea transition-colors text-white/40">Türkçe</a>
+        <a href="https://www.takastudio.games/presskit/tr" class="hover:text-sea transition-colors text-white/40">TÜRKÇE</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/es" class="hover:text-sea transition-colors text-white/40">ESPAÑOL</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/pt" class="hover:text-sea transition-colors text-white/40">PORTUGUÊS</a>
         <span class="opacity-10">|</span>
         <a href="https://www.takastudio.games/presskit/jp" class="hover:text-sea transition-colors text-white/40">日本語</a>
         <span class="opacity-10">|</span>
@@ -78,22 +81,22 @@
     <div class="flex flex-col lg:flex-row gap-12">
       
       <aside class="w-full lg:w-80 flex-shrink-0">
-        <div class="lg:sticky lg:top-28 space-y-8">
+        <div class="lg:sticky lg:top-32 space-y-8">
           <div class="rounded-3xl overflow-hidden border border-white/20 shadow-2xl shadow-black/60 bg-navy transition-all duration-500 hover:shadow-sea/20">
             <img src="../HexaFootball 748x896 Art.png" class="w-full h-auto" alt="HexaFootball Art">
           </div>
           <nav class="flex flex-col space-y-1 text-[11px] font-bold tracking-widest uppercase text-white/30 pt-4">
-            <a href="#pitch" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">Pitch</a>
-            <a href="#history" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">History</a>
-            <a href="#features" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">Features</a>
-            <a href="#media" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all text-sea">Media Assets</a>
-            <a href="#contact" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">Contact</a>
+            <a href="#pitch" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">PITCH</a>
+            <a href="#history" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">HISTORY</a>
+            <a href="#features" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">FEATURES</a>
+            <a href="#media" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all text-sea">MEDIA ASSETS</a>
+            <a href="#contact" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">CONTACT</a>
           </nav>
         </div>
       </aside>
 
       <aside class="w-full lg:w-64 flex-shrink-0 lg:border-r lg:border-l border-white/5 lg:px-8 space-y-10">
-        <div class="lg:sticky lg:top-28">
+        <div class="lg:sticky lg:top-32">
           <h2 class="font-display text-2xl mb-8 border-b border-sea/30 pb-3">Factsheet</h2>
           <div class="space-y-8 text-sm">
             <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Developer</h3><p class="text-white/80">Taka Studio<br><span class="opacity-50 font-normal">Istanbul, Turkey</span></p></div>
@@ -115,7 +118,7 @@
         
         <section id="pitch">
           <h1 class="font-display text-6xl mb-10 tracking-tight text-white leading-none">HexaFootball</h1>
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">Pitch</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">PITCH</h2>
           <p class="text-2xl leading-relaxed text-foam italic border-l-4 border-sea pl-8 py-2">HexaFootball is a turn-based football strategy game that blends the tactical depth of chess with the emotional intensity of football. Every pass, movement, and shot is a calculated decision rather than a test of reflexes.</p>
           
           <div class="mt-12 space-y-8 text-white/70 text-lg leading-relaxed max-w-2xl font-sans text-left">
@@ -125,7 +128,7 @@
         </section>
 
         <section id="history" class="space-y-6 text-left">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">History</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">HISTORY</h2>
           <div class="space-y-6 text-white/70 text-lg leading-relaxed font-sans text-left">
             <p>HexaFootball began as a passion project by two game design students and friends, born out of their deep interest in strategy and sports games. The project started with a simple question: "What kind of football game would we want to play ourselves?"</p>
             <p>Driven by a shared love for tactical depth and thoughtful decision-making, they set out to create a football experience that moves away from reflex-based gameplay and toward pure strategy. Development officially began in mid-2025, and through continuous iteration, internal playtests, and design refinements, HexaFootball evolved into a distinct, turn-based tactical football experience built for PC.</p>
@@ -133,7 +136,7 @@
         </section>
 
         <section id="features" class="space-y-8 font-sans text-left">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">Features</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">FEATURES</h2>
           <ul class="feature-list max-w-2xl text-left">
             <li>Turn-based football gameplay where strategy, positioning, and foresight matter more than reflexes</li>
             <li>Hexagonal grid-based pitch that transforms football into a chess-like tactical board</li>
@@ -147,7 +150,7 @@
         </section>
 
         <section id="media" class="space-y-16 text-left">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">Media Assets</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">MEDIA ASSETS</h2>
           
           <div class="space-y-8">
             <h3 class="font-display text-2xl">Screenshots</h3>
@@ -197,7 +200,7 @@
         </section>
 
         <section id="contact" class="pt-16 text-left pb-32">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">Contact</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">CONTACT</h2>
           <p class="text-foam text-3xl font-display hover:text-white transition-colors cursor-pointer underline underline-offset-8 decoration-white/10 font-bold">info@takastudio.games</p>
         </section>
 

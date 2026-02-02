@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press Kit — Taka Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0C1B2A',
+            sea: '#0E6E6E',
+            sand: '#E5D3B3',
+            foam: '#CFE7E4',
+          },
+          fontFamily: {
+            display: ['Outfit', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .grain { position: relative; }
+    .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
+    
+    /* Yan menü için aktif link stili */
+    .sidebar-link { @apply block py-2 text-white/60 hover:text-foam transition-colors; }
+    section { scroll-margin-top: 100px; }
+  </style>
+</head>
+
+<body class="bg-navy text-white antialiased grain font-sans">
+
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="../assets/takastudio_logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm">
+        <span class="font-display text-lg tracking-wide">Taka Studio <span class="text-foam ml-2 text-sm opacity-70">Press Kit</span></span>
+      </a>
+      <a href="/" class="text-sm hover:text-foam border border-white/20 px-4 py-1.5 rounded-lg transition">← Back to Site</a>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+    <div class="flex flex-col lg:flex-row gap-12">
+      
+      <aside class="lg:w-64 flex-shrink-0">
+        <div class="sticky top-24 space-y-1 text-sm">
+          <p class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-4">Contents</p>
+          <a href="#factsheet" class="sidebar-link hover:text-foam block py-1.5">Factsheet</a>
+          <a href="#description" class="sidebar-link hover:text-foam block py-1.5">Description</a>
+          <a href="#projects" class="sidebar-link hover:text-foam block py-1.5">Projects</a>
+          <a href="#history" class="sidebar-link hover:text-foam block py-1.5">History</a>
+          <a href="#images" class="sidebar-link hover:text-foam block py-1.5">Images & Logos</a>
+          <a href="#contact" class="sidebar-link hover:text-foam block py-1.5">Contact</a>
+        </div>
+      </aside>
+
+      <main class="flex-1 max-w-3xl">
+        
+        <section id="factsheet" class="mb-16">
+          <h1 class="font-display text-4xl mb-8">Factsheet</h1>
+          <div class="grid sm:grid-cols-2 gap-8 text-sm border-l-2 border-sea pl-6">
+            <div>
+              <h3 class="font-bold text-foam mb-1">Developer:</h3>
+              <p>Taka Studio<br>Based in Istanbul, Türkiye</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-foam mb-1">Founding Date:</h3>
+              <p>2024</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-foam mb-1">Website:</h3>
+              <p><a href="https://takastudio.games" class="underline">takastudio.games</a></p>
+            </div>
+            <div>
+              <h3 class="font-bold text-foam mb-1">Press / Business Contact:</h3>
+              <p>info@takastudio.games</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-foam mb-1">Socials:</h3>
+              <p>
+                <a href="https://x.com/takastudiogames" class="underline">X (Twitter)</a>, 
+                <a href="https://www.linkedin.com/company/taka-game-studio" class="underline">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-white/10 mb-16">
+
+        <section id="description" class="mb-16 text-white/80 leading-relaxed">
+          <h2 class="font-display text-2xl text-white mb-4">Description</h2>
+          <p class="mb-4">Taka Studio is an independent game studio based in Istanbul crafting design‑driven experiences. We focus on PC-first strategy games and systems-driven experiences that prioritize clarity and craftsmanship.</p>
+          <p>Our goal is to create worlds that players can explore "move by move," combining tactical depth with elegant aesthetics.</p>
+        </section>
+
+        <section id="projects" class="mb-16">
+          <h2 class="font-display text-2xl mb-4">Projects</h2>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <h3 class="text-xl font-display text-foam mb-2">HexaFootball</h3>
+            <p class="text-sm text-white/70 mb-4">A turn‑based football strategy game for PC that blends tactical depth with the excitement of the beautiful game.</p>
+            <a href="https://store.steampowered.com/" class="text-xs uppercase tracking-widest font-bold hover:text-foam">View on Steam →</a>
+          </div>
+        </section>
+
+        <section id="history" class="mb-16 text-white/80 leading-relaxed">
+          <h2 class="font-display text-2xl text-white mb-4">History</h2>
+          <p>The name “Taka” refers to a traditional small boat from Türkiye’s Black Sea coast — a symbol of exploration, resilience, and handmade quality. Founded by a small team of passionate developers, the studio aim to bring a fresh perspective to the indie strategy scene.</p>
+        </section>
+
+        <section id="images" class="mb-16">
+          <h2 class="font-display text-2xl mb-6">Images & Logos</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-video bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-[10px] text-white/40">
+              <img src="../HexaFootball_Steam_Capsule_1232 x 706.png" class="rounded-lg object-cover w-full h-full" alt="HexaFootball">
+            </div>
+            <div class="aspect-video bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-[10px] text-white/40">
+               <img src="../SS.png" class="rounded-lg object-cover w-full h-full" alt="Screenshot">
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/50 italic text-center">Contact us for high-resolution assets and layered logos.</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="py-10 border-t border-white/10 bg-[#0b1724] text-center">
+    <p class="text-white/40 text-xs">© 2025 Taka Studio • Press Kit Template</p>
+  </footer>
+
+</body>
+</html>

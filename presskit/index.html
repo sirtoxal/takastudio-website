@@ -14,16 +14,8 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            navy: '#0C1B2A',
-            sea: '#0E6E6E',
-            sand: '#E5D3B3',
-            foam: '#CFE7E4',
-          },
-          fontFamily: {
-            display: ['Outfit', 'system-ui', 'sans-serif'],
-            sans: ['Inter', 'ui-sans-serif', 'system-ui']
-          }
+          colors: { navy: '#0C1B2A', sea: '#0E6E6E', sand: '#E5D3B3', foam: '#CFE7E4' },
+          fontFamily: { display: ['Outfit', 'sans-serif'], sans: ['Inter', 'sans-serif'] }
         }
       }
     }
@@ -31,161 +23,170 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    .grain { position: relative; }
     .grain::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08;
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; z-index: 10;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>');
       mix-blend-mode: overlay;
     }
-    section { scroll-margin-top: 100px; }
-    .gallery-img { cursor: zoom-in; transition: transform 0.2s; }
-    .gallery-img:hover { transform: scale(1.02); }
+    section { scroll-margin-top: 80px; }
+    .gallery-img { cursor: zoom-in; transition: 0.2s; }
+    .gallery-img:hover { opacity: 0.8; }
   </style>
 </head>
 
-<body class="bg-navy text-white antialiased grain font-sans">
-
-  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="../assets/takastudio_logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm">
-        <span class="font-display text-lg tracking-wide">
-          HexaFootball <span class="text-foam ml-2 text-sm opacity-70">Press Kit</span>
-        </span>
-      </a>
-      <a href="/" class="text-sm hover:text-foam border border-white/20 px-4 py-1.5 rounded-lg transition">
-        ← Back to Site
-      </a>
+<body class="bg-navy text-white antialiased font-sans">
+  <div class="grain relative min-h-screen">
+    
+    <div class="w-full h-[300px] md:h-[450px] overflow-hidden relative border-b border-white/10">
+      <img src="../assets/header_banner.jpg" class="w-full h-full object-cover" alt="HexaFootball Header">
+      <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent"></div>
     </div>
-  </header>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
-    <div class="flex flex-col lg:flex-row gap-12">
-      
-      <aside class="lg:w-64 flex-shrink-0">
-        <div class="sticky top-24 flex flex-col space-y-2 text-sm text-left">
-          <p class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Contents</p>
-          <a href="#factsheet" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Factsheet</a>
-          <a href="#description" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Description</a>
-          <a href="#features" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Key Features</a>
-          <a href="#history" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Development History</a>
-          <a href="#images" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Images & Logos</a>
-          <a href="#contact" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Contact</a>
-        </div>
-      </aside>
-
-      <main class="flex-1 max-w-3xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
+      <div class="flex flex-col lg:flex-row gap-12">
         
-        <section id="factsheet" class="mb-16">
-          <h1 class="font-display text-4xl mb-8">HexaFootball Press Kit</h1>
-          <div class="grid sm:grid-cols-2 gap-8 text-sm border-l-2 border-sea pl-6">
-            <div>
-              <h3 class="font-bold text-foam mb-1">Title:</h3>
-              <p>HexaFootball</p>
+        <aside class="lg:w-64 flex-shrink-0">
+          <div class="sticky top-24">
+            <div class="mb-8 overflow-hidden rounded-xl border border-white/10 shadow-2xl bg-navy">
+              <img src="../assets/box_art.jpg" class="w-full h-auto" alt="HexaFootball Box Art">
             </div>
-            <div>
-              <h3 class="font-bold text-foam mb-1">Developer:</h3>
-              <p>Taka Studio<br>Istanbul, Türkiye</p>
-            </div>
-            <div>
-              <h3 class="font-bold text-foam mb-1">Release:</h3>
-              <p>PC (Steam)<br>Planned: 2026</p>
-            </div>
-            <div>
-              <h3 class="font-bold text-foam mb-1">Genre:</h3>
-              <p>Turn-based Strategy / Sports</p>
-            </div>
-            <div>
-              <h3 class="font-bold text-foam mb-1">Website:</h3>
-              <p><a href="https://takastudio.games" class="underline">takastudio.games</a></p>
-            </div>
-            <div>
-              <h3 class="font-bold text-foam mb-1">Press Contact:</h3>
-              <p>info@takastudio.games</p>
-            </div>
-          </div>
-        </section>
-
-        <hr class="border-white/10 mb-16">
-
-        <section id="description" class="mb-16 text-white/80 leading-relaxed">
-          <h2 class="font-display text-2xl text-white mb-4">Description</h2>
-          <p class="mb-4">
-            HexaFootball is a turn-based football strategy game that reimagines the sport through tactical decision-making rather than reflex-driven action.
-            Every pass, movement, and shot takes place on a hex-based grid where foresight and planning define success.
-          </p>
-        </section>
-
-        <section id="features" class="mb-16">
-          <h2 class="font-display text-2xl mb-4">Key Features</h2>
-          <ul class="list-disc list-inside text-white/80 space-y-2">
-            <li>Turn-based football gameplay on a hexagonal grid</li>
-            <li>Positioning, passing lanes, and tactical foresight</li>
-            <li>Clear, readable UI focused on strategic clarity</li>
-            <li>PC-first design with competitive and single-player modes</li>
-          </ul>
-        </section>
-
-        <section id="history" class="mb-16 text-white/80 leading-relaxed">
-          <h2 class="font-display text-2xl text-white mb-4">Development History</h2>
-          <p>
-            Developed by Taka Studio, the project evolved through rapid prototyping into a full-scale strategy game,
-            focusing on systemic depth, readability, and meaningful decisions every turn.
-          </p>
-        </section>
-
-        <section id="images" class="mb-16">
-          <h2 class="font-display text-2xl mb-6">Images & Logos</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
             
-            <div class="flex flex-col gap-3">
-              <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
-                <img src="../HexaFootball_Steam_Capsule_1232 x 706.png" class="gallery-img object-cover w-full h-full" alt="Capsule Art">
+            <nav class="flex flex-col space-y-1 text-sm">
+              <a href="#factsheet" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Factsheet</a>
+              <a href="#description" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Description</a>
+              <a href="#history" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">History</a>
+              <a href="#features" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Features</a>
+              <a href="#trailer" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Trailers</a>
+              <a href="#screenshots" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Screenshots</a>
+              <a href="#arts" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Key Arts</a>
+              <a href="#logos" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Logos</a>
+              <a href="#contact" class="py-2 px-4 hover:bg-white/5 rounded-lg text-white/60 hover:text-foam transition">Contact</a>
+              
+              <div class="pt-6">
+                <a href="../assets/HexaFootball_PressKit_Full.zip" class="w-full flex items-center justify-center gap-2 bg-sea hover:bg-sea/80 text-white px-4 py-3 rounded-xl text-xs font-bold transition shadow-lg">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  DOWNLOAD ALL (ZIP)
+                </a>
               </div>
-              <a href="../HexaFootball_Steam_Capsule_1232 x 706.png" download class="text-center py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">DOWNLOAD</a>
-            </div>
+            </nav>
+          </div>
+        </aside>
 
-            <div class="flex flex-col gap-3">
-              <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
-                <img src="../SS.png" class="gallery-img object-cover w-full h-full" alt="Screenshot 1">
+        <main class="flex-1 pb-20">
+          <div class="flex flex-col gap-16">
+            
+            <section id="factsheet">
+              <h1 class="font-display text-5xl mb-10 tracking-tight">HexaFootball</h1>
+              <div class="grid md:grid-cols-2 gap-10 border-l-4 border-sea pl-8 bg-white/5 py-8 rounded-r-2xl">
+                <div class="space-y-6">
+                  <div><h3 class="text-xs uppercase tracking-widest text-foam font-bold mb-1">Developer</h3><p class="text-lg">Taka Studio<br><span class="text-sm text-white/60 font-normal">Based in Istanbul, Turkey</span></p></div>
+                  <div><h3 class="text-xs uppercase tracking-widest text-foam font-bold mb-1">Release Date</h3><p class="text-lg font-medium underline decoration-sea decoration-2">Planned: 2026</p></div>
+                </div>
+                <div class="space-y-6">
+                  <div><h3 class="text-xs uppercase tracking-widest text-foam font-bold mb-1">Platforms</h3><p class="text-lg underline decoration-white/20">PC (Steam)</p></div>
+                  <div><h3 class="text-xs uppercase tracking-widest text-foam font-bold mb-1">Website</h3><a href="https://takastudio.games" class="text-lg hover:text-foam transition">takastudio.games</a></div>
+                </div>
               </div>
-              <a href="../SS.png" download class="text-center py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">DOWNLOAD</a>
-            </div>
+            </section>
+
+            <section id="description" class="prose prose-invert max-w-none space-y-8">
+              <div>
+                <h2 class="font-display text-3xl mb-4 border-b border-white/10 pb-2">Description</h2>
+                <p class="text-lg text-white/80 leading-relaxed">HexaFootball is a turn-based football strategy game for PC that blends chess-like tactical depth with the drama of football. Played on a hex-based pitch, the game focuses on positioning, foresight, and calculated decisions rather than reflex-based action.</p>
+              </div>
+              
+              <div id="history">
+                <h2 class="font-display text-3xl mb-4 border-b border-white/10 pb-2">History</h2>
+                <p class="text-white/80 leading-relaxed">HexaFootball began as a passion project by two friends studying game design, both deeply interested in strategy and sports games. The project started with a simple question: what kind of football game would we want to play ourselves? Development officially began in mid-2025.</p>
+              </div>
+
+              <div id="features">
+                <h2 class="font-display text-3xl mb-4 border-b border-white/10 pb-2">Features</h2>
+                <ul class="grid md:grid-cols-2 gap-4 list-none p-0">
+                  <li class="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-sea font-bold">●</span> Turn-based tactical gameplay</li>
+                  <li class="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-sea font-bold">●</span> Hexagonal grid positioning</li>
+                  <li class="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-sea font-bold">●</span> Career & Managerial mode</li>
+                  <li class="flex gap-3 bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-sea font-bold">●</span> Competitive Multiplayer</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="trailer">
+              <h2 class="font-display text-3xl mb-6">Trailers</h2>
+              <div class="aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/CCazcCdP1sY" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="mt-4 flex justify-end">
+                <a href="../assets/trailers.zip" download class="text-xs font-bold text-foam hover:underline underline-offset-4 flex items-center gap-2">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  DOWNLOAD TRAILERS (ZIP)
+                </a>
+              </div>
+            </section>
+
+            <section id="screenshots">
+              <div class="flex items-end justify-between mb-6">
+                <h2 class="font-display text-3xl">Screenshots</h2>
+                <a href="../assets/screenshots.zip" download class="text-xs font-bold text-foam hover:underline">DOWNLOAD ALL (ZIP)</a>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="group relative">
+                  <img src="../assets/SS.png" class="gallery-img rounded-xl border border-white/10 w-full aspect-video object-cover">
+                  <a href="../assets/SS.png" download class="absolute bottom-2 right-2 bg-black/60 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></a>
+                </div>
+                <div class="group relative">
+                  <img src="../assets/SS2.png" class="gallery-img rounded-xl border border-white/10 w-full aspect-video object-cover">
+                  <a href="../assets/SS2.png" download class="absolute bottom-2 right-2 bg-black/60 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></a>
+                </div>
+              </div>
+            </section>
+
+            <section id="arts">
+              <div class="flex items-end justify-between mb-6">
+                <h2 class="font-display text-3xl">Key Arts</h2>
+                <a href="../assets/arts.zip" download class="text-xs font-bold text-foam hover:underline">DOWNLOAD ALL (ZIP)</a>
+              </div>
+              <div class="grid grid-cols-1 gap-4">
+                <div class="group relative">
+                   <img src="../assets/HexaFootball_Steam_Capsule_1232 x 706.png" class="gallery-img rounded-xl border border-white/10 w-full h-[300px] object-cover">
+                   <a href="../assets/HexaFootball_Steam_Capsule_1232 x 706.png" download class="absolute bottom-4 right-4 bg-black/60 p-3 rounded-xl opacity-0 group-hover:opacity-100 transition flex items-center gap-2 text-xs font-bold"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> DOWNLOAD HD</a>
+                </div>
+              </div>
+            </section>
+
+            <section id="logos">
+              <div class="flex items-end justify-between mb-6">
+                <h2 class="font-display text-3xl">Logos</h2>
+                <a href="../assets/logos.zip" download class="text-xs font-bold text-foam hover:underline">DOWNLOAD ALL (ZIP)</a>
+              </div>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white/5 p-8 rounded-xl border border-white/10 flex flex-col items-center gap-4">
+                  <img src="../assets/takastudio_logo.png" class="w-16 h-16 object-contain">
+                  <a href="../assets/takastudio_logo.png" download class="text-[10px] font-bold opacity-50 hover:opacity-100 transition">DOWNLOAD PNG</a>
+                </div>
+              </div>
+            </section>
 
           </div>
-        </section>
-
-      </main>
+        </main>
+      </div>
     </div>
   </div>
 
-  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] p-4 cursor-zoom-out">
-    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl">
+  <div id="lightbox" class="fixed inset-0 bg-black/95 hidden items-center justify-center z-[100] p-4 cursor-zoom-out">
+    <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl">
   </div>
-
-  <footer class="py-10 border-t border-white/10 bg-[#0b1724] text-center">
-    <p class="text-white/40 text-xs">© 2026 Taka Studio • HexaFootball Press Kit</p>
-  </footer>
 
   <script>
-    // Resim Büyütme Fonksiyonu
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const galleryImgs = document.querySelectorAll('.gallery-img');
-
-    galleryImgs.forEach(img => {
+    document.querySelectorAll('.gallery-img').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
-        lightbox.classList.remove('hidden');
-        lightbox.classList.add('flex');
+        lightbox.classList.replace('hidden', 'flex');
       });
     });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.add('hidden');
-      lightbox.classList.remove('flex');
-    });
+    lightbox.addEventListener('click', () => lightbox.classList.replace('flex', 'hidden'));
   </script>
-
 </body>
 </html>

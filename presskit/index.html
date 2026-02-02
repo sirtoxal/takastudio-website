@@ -33,14 +33,15 @@
     .gallery-img:hover { opacity: 0.8; transform: scale(1.02); }
     .feature-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.8); line-height: 1.5; font-size: 0.95rem; }
     .feature-list li::before { content: "●"; position: absolute; left: 0; color: #0E6E6E; font-size: 0.8rem; top: 0.1rem; }
+    .btn-download { @apply flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-[10px] font-bold py-2 px-3 rounded-lg transition mt-2 border border-white/5 uppercase tracking-wider; }
   </style>
 </head>
 
 <body class="bg-navy text-white antialiased font-sans grain">
 
   <div class="w-full h-[300px] md:h-[450px] overflow-hidden relative border-b border-white/10">
-    <img src="../HexaFootball 1920x1080 Art.png" class="w-full h-full object-cover" alt="HexaFootball Banner">
-    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/5 to-transparent"></div>
+    <img src="../Adsız tasarım (12).png" class="w-full h-full object-cover" alt="HexaFootball Banner">
+    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-20 pb-32">
@@ -49,7 +50,7 @@
       <aside class="w-full lg:w-48 flex-shrink-0">
         <div class="sticky top-24 space-y-6">
           <div class="rounded-xl overflow-hidden border border-white/10 shadow-xl bg-navy">
-            <img src="../HexaFootball 800x900 Art.png" class="w-full h-auto" alt="HexaFootball Art">
+            <img src="../HexaFootball 748x896 Art.png" class="w-full h-auto" alt="HexaFootball Art">
           </div>
           <nav class="flex flex-col space-y-1 text-xs font-medium tracking-wide uppercase text-white/40">
             <a href="#pitch" class="py-2 px-3 hover:text-foam hover:bg-white/5 rounded-lg transition">Pitch</a>
@@ -84,9 +85,9 @@
       <main class="flex-1 space-y-20 lg:pl-4">
         
         <section id="pitch">
-          <h1 class="font-display text-5xl mb-8 tracking-tight">HexaFootball</h1>
+          <h1 class="font-display text-5xl mb-8 tracking-tight text-foam">HexaFootball</h1>
           <h2 class="text-[10px] uppercase tracking-widest text-sea font-bold mb-4">Pitch</h2>
-          <p class="text-xl leading-relaxed text-white/95">HexaFootball is a turn-based football strategy game that blends the tactical depth of chess with the emotional intensity of football. Every pass, movement, and shot is a calculated decision rather than a test of reflexes.</p>
+          <p class="text-xl leading-relaxed text-white/95 italic border-l-4 border-sea pl-6">HexaFootball is a turn-based football strategy game that blends the tactical depth of chess with the emotional intensity of football. Every pass, movement, and shot is a calculated decision rather than a test of reflexes.</p>
           
           <div class="mt-8 space-y-6 text-white/80 leading-relaxed">
             <p>HexaFootball is a turn-based football strategy game for PC that blends chess-like tactical depth with the drama of football. Played on a hex-based pitch, the game focuses on positioning, foresight, and calculated decisions rather than reflex-based action.</p>
@@ -117,26 +118,48 @@
         <section id="media" class="space-y-12">
           <h2 class="text-[10px] uppercase tracking-widest text-sea font-bold">Media Assets</h2>
           
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <img src="../HexaFootball ScreenShot 1.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 1">
-            <img src="../HexaFootball ScreenShot 2.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 2">
-            <img src="../HexaFootball ScreenShot 3.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 3">
-            <img src="../HexaFootball ScreenShot 4.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 4">
-            <img src="../HexaFootball ScreenShot 5.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 5">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="flex flex-col">
+              <img src="../HexaFootball ScreenShot 1.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 1">
+              <a href="../HexaFootball ScreenShot 1.png" download class="btn-download">Download</a>
+            </div>
+            <div class="flex flex-col">
+              <img src="../HexaFootball ScreenShot 2.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 2">
+              <a href="../HexaFootball ScreenShot 2.png" download class="btn-download">Download</a>
+            </div>
+            <div class="flex flex-col">
+              <img src="../HexaFootball ScreenShot 3.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 3">
+              <a href="../HexaFootball ScreenShot 3.png" download class="btn-download">Download</a>
+            </div>
+            <div class="flex flex-col">
+              <img src="../HexaFootball ScreenShot 4.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 4">
+              <a href="../HexaFootball ScreenShot 4.png" download class="btn-download">Download</a>
+            </div>
+            <div class="flex flex-col">
+              <img src="../HexaFootball ScreenShot 5.png" class="gallery-img rounded-lg border border-white/5 aspect-video object-cover" alt="Screenshot 5">
+              <a href="../HexaFootball ScreenShot 5.png" download class="btn-download">Download</a>
+            </div>
           </div>
 
-          <div class="aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/CCazcCdP1sY" frameborder="0" allowfullscreen></iframe>
+          <div class="space-y-4">
+            <div class="aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/NRQHUrkaNlQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="flex justify-end">
+              <a href="../HexaFootball_Trailer.zip" download class="btn-download px-6">Download Trailer (ZIP)</a>
+            </div>
           </div>
 
           <div class="space-y-4 pt-6">
             <h3 class="text-xs font-bold text-white/40 uppercase tracking-widest">Logos</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <div class="flex items-center justify-center">
-                <img src="../HexaFootball Logo.png" class="h-32 w-auto object-contain" alt="HexaFootball Logo">
+            <div class="grid grid-cols-2 sm:grid-cols-2 gap-12">
+              <div class="flex flex-col items-center">
+                <img src="../HexaFootball Logo.png" class="gallery-img h-32 w-auto object-contain p-2" alt="HexaFootball Logo">
+                <a href="../HexaFootball Logo.png" download class="btn-download w-full">Download Logo</a>
               </div>
-              <div class="flex items-center justify-center">
-                <img src="../Taka Studio Frame Logo.png" class="h-32 w-auto object-contain" alt="Taka Studio Logo">
+              <div class="flex flex-col items-center">
+                <img src="../Taka Studio Frame Logo.png" class="gallery-img h-32 w-auto object-contain p-2" alt="Taka Studio Logo">
+                <a href="../Taka Studio Frame Logo.png" download class="btn-download w-full">Download Taka Logo</a>
               </div>
             </div>
           </div>

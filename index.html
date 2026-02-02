@@ -62,17 +62,24 @@
         <img src="assets/takastudio_logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm">
         <span class="font-display text-lg tracking-wide">Taka Studio</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#games" class="hover:text-foam">Games</a>
-        <a href="#about" class="hover:text-foam">About</a>
-        <a href="https://www.linkedin.com/company/takastudio/jobs" target="_blank" class="hover:text-foam">Career</a>
-        <a href="#news" class="hover:text-foam">News</a>
-        <a href="#contact" class="hover:text-foam">Contact</a>
-        <a href="https://www.takastudio.games/presskit"
-           class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2zM14 4v4h4"/></svg>
-          <span>Press Kit</span>
-        </a>
+      <nav class="hidden md:flex items-center gap-4 text-sm">
+        <a href="#games" class="hover:text-foam px-2">Games</a>
+        <a href="#about" class="hover:text-foam px-2">About</a>
+        <a href="https://www.linkedin.com/company/takastudio/jobs" target="_blank" class="hover:text-foam px-2">Career</a>
+        <a href="#news" class="hover:text-foam px-2">News</a>
+        <a href="#contact" class="hover:text-foam px-2">Contact</a>
+        
+        <div class="flex items-center gap-2 ml-2">
+          <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
+            <span>Wishlist on Steam</span>
+          </a>
+          <a href="https://www.takastudio.games/presskit"
+             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white px-4 py-2 rounded-xl transition">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2zM14 4v4h4"/></svg>
+            <span>Press Kit</span>
+          </a>
+        </div>
       </nav>
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-white/10 focus:outline-none" aria-label="Open Menu">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -84,7 +91,10 @@
         <a href="#about" class="block">About</a>
         <a href="#news" class="block">News</a>
         <a href="#contact" class="block">Contact</a>
-        <a href="https://www.takastudio.games/presskit" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft w-full justify-center">Press Kit</a>
+        <div class="pt-2 flex flex-col gap-2">
+          <a href="https://store.steampowered.com/" class="inline-flex items-center justify-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft w-full">Wishlist on Steam</a>
+          <a href="https://www.takastudio.games/presskit" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/10 text-white px-4 py-2 rounded-xl w-full">Press Kit</a>
+        </div>
       </div>
     </div>
   </header>
@@ -131,104 +141,23 @@
         </div>
       </div>
 
-      <div class="mt-10 flex flex-wrap items-center gap-3 reveal">
+      <div class="mt-10 flex flex-wrap items-center gap-4 reveal">
+        <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-6 py-3 rounded-xl shadow-soft transition">
+          <span>Add to your Steam Wishlist</span>
+        </a>
         <a href="https://www.takastudio.games/presskit"
            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition shadow-soft">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
           <span>View Press Kit</span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="py-20 text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-      <h2 class="font-display text-3xl sm:text-4xl">About Taka Studio</h2>
-      <p class="mt-3 text-white/80">
-        Based in Istanbul, Taka Studio is a small, ambitious team creating original, design-driven games with clarity and craft.
-        The name <em>“Taka”</em> refers to a traditional small boat from Türkiye’s Black Sea coast — a symbol of exploration, resilience, and handmade quality.
-      </p>
-      <ul class="mt-6 space-y-2 text-white/80 text-left sm:text-center inline-block">
-        <li>• Values: Creativity, Clarity, Collaboration, Craftsmanship</li>
-        <li>• Focus: PC-first strategy and systems-driven experiences</li>
-        <li>• Engine: Unreal Engine 5</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="news" class="py-20 bg-[#0d2236]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal">
-        <h2 class="font-display text-3xl sm:text-4xl">News & Devlog</h2>
-        <p class="mt-3 text-white/80 max-w-2xl">Development updates, behind‑the‑scenes notes, and announcements.</p>
-      </div>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
-          <h3 class="font-display text-xl">Prototype Milestone</h3>
-          <p class="mt-2 text-white/70">We reached a core‑loop prototype for HexaFootball and began internal playtesting to validate pacing and clarity.</p>
-          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
-        </article>
-        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
-          <h3 class="font-display text-xl">Art Direction Peek</h3>
-          <p class="mt-2 text-white/70">Exploring hex‑grid UI, motion lines, and a minimal palette inspired by the Black Sea.</p>
-          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
-        </article>
-        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
-          <h3 class="font-display text-xl">Steam Page Prep</h3>
-          <p class="mt-2 text-white/70">Gathering captures, writing capsule copy, and preparing the wishlist campaign.</p>
-          <a href="#" class="mt-4 text-foam hover:underline">Read more</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-20 pb-32">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal text-center">
-        <h2 class="font-display text-3xl sm:text-4xl">Contact</h2>
-        <p class="mt-3 text-white/80">
-          Want to reach out about HexaFootball, press, or collaboration? Send a message below - or contact us directly at 
-          <span id="emailCopy" class="text-foam hover:underline cursor-pointer select-all">info@takastudio.games</span>
-          <span id="copyMsg" class="ml-2 text-green-400 hidden">Copied!</span>
-        </p>
-      </div>
-      <form id="contactForm" class="mt-10 reveal grid gap-4" action="https://formsubmit.co/studiotakagames@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Yeni mesaj - takastudio.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://takastudio-website.vercel.app/#contact">
-        <input type="text" name="_honey" style="display:none">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm mb-1" for="name">Name</label>
-            <input id="name" name="name" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
-          </div>
-          <div>
-            <label class="block text-sm mb-1" for="email">Email</label>
-            <input id="email" type="email" name="email" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60" />
-          </div>
+        
+        <div class="w-full md:w-auto mt-2 md:mt-0">
+          <span class="text-white/60 text-sm">Planned release: 2026 • Platform: PC (Steam)</span>
         </div>
-        <div>
-          <label class="block text-sm mb-1" for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-sea/60"></textarea>
-        </div>
-        <button type="submit" class="inline-flex justify-center items-center bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Send</button>
-        <p id="successMessage" class="hidden text-green-400 text-center mt-4">✅ Your message has been sent successfully!</p>
-      </form>
-    </div>
-  </section>
-
-  <footer class="py-10 border-t border-white/10 bg-[#0b1724]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <p class="text-white/60 text-sm">© <span id="year"></span> Taka Studio • Istanbul, Türkiye</p>
-      <div class="flex items-center gap-4 text-white/70">
-        <a href="https://store.steampowered.com/" target="_blank" rel="noopener" class="hover:text-foam">Steam</a>
-        <a href="https://x.com/takastudiogames" target="_blank" rel="noopener" class="hover:text-foam">X</a>
-        <a href="https://www.linkedin.com/company/taka-game-studio" target="_blank" rel="noopener" class="hover:text-foam">LinkedIn</a>
-        <a href="https://discord.gg/9uWpzF4U" target="_blank" rel="noopener" class="hover:text-foam">Discord</a>
       </div>
     </div>
-  </footer>
+  </section>
 
   <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60]">
     <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-xl shadow-soft cursor-pointer">
@@ -255,16 +184,6 @@
     }, { threshold: 0.15 });
     revealEls.forEach((el) => io.observe(el));
 
-    // Smooth Scroll Auto (First scroll only)
-    let hasScrolled = false;
-    window.addEventListener('scroll', () => {
-      if (hasScrolled) return;
-      if (window.scrollY > window.innerHeight * 0.1) {
-        hasScrolled = true;
-        document.querySelector('#games').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
     // Form Handling
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("successMessage");
@@ -280,8 +199,6 @@
         if (response.ok) {
           successMsg.classList.remove("hidden");
           form.reset();
-        } else {
-          alert("Oops! Something went wrong.");
         }
       });
     }

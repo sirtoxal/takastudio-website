@@ -36,7 +36,7 @@
     .feature-list li::before { content: "●"; position: absolute; left: 0; color: #0E6E6E; font-size: 0.8rem; top: 0.1rem; }
     
     .btn-premium { @apply inline-flex items-center gap-2 bg-white/5 hover:bg-sea border border-white/10 hover:border-sea text-white px-8 py-4 rounded-full text-xs font-bold tracking-[0.15em] transition-all duration-300 shadow-xl active:scale-95; }
-    .btn-main { @apply inline-flex items-center gap-2 bg-sea hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full text-xs font-bold tracking-[0.15em] transition-all duration-300 shadow-xl shadow-sea/20 active:scale-95; }
+    .btn-main { @apply inline-flex items-center gap-2 bg-sea hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full text-xs font-bold tracking-[0.15em] transition-all duration-300 shadow-xl shadow-sea/20 active:scale-95 cursor-pointer; }
   </style>
 </head>
 
@@ -69,17 +69,10 @@
         <div class="sticky top-24">
           <h2 class="font-display text-2xl mb-8 border-b border-sea/30 pb-3">Factsheet</h2>
           <div class="space-y-8 text-sm">
-            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Developer</h3><p class="text-white/80">Taka Studio<br><span class="opacity-50 font-normal">Istanbul, Turkey</span></p></div>
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Developer</h3><p class="text-white/80">Taka Studio<br><span class="opacity-50 font-normal font-sans">Istanbul, Turkey</span></p></div>
             <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Release Date</h3><p class="text-white/80">Planned: 2026</p></div>
             <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Platforms</h3><p class="text-white/80 underline decoration-white/10 underline-offset-4">PC (Steam)</p></div>
-            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Website</h3><a href="https://takastudio.games" class="hover:text-foam transition underline decoration-white/10">takastudio.games</a></div>
-            
-            <div class="pt-8">
-              <a href="../HexaFootball_PressKit_Bundle.zip" download class="btn-main w-full text-center">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                FULL KIT .ZIP
-              </a>
-            </div>
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Website</h3><a href="https://takastudio.games" class="hover:text-foam transition underline decoration-white/10 font-sans">takastudio.games</a></div>
           </div>
         </div>
       </aside>
@@ -88,24 +81,24 @@
         
         <section id="pitch">
           <h1 class="font-display text-6xl mb-10 tracking-tight text-white leading-none">HexaFootball</h1>
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6">Pitch</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">Pitch</h2>
           <p class="text-2xl leading-relaxed text-foam italic border-l-4 border-sea pl-8 py-2">HexaFootball is a turn-based football strategy game that blends the tactical depth of chess with the emotional intensity of football. Every pass, movement, and shot is a calculated decision rather than a test of reflexes.</p>
           
-          <div class="mt-12 space-y-8 text-white/70 text-lg leading-relaxed max-w-2xl">
+          <div class="mt-12 space-y-8 text-white/70 text-lg leading-relaxed max-w-2xl font-sans">
             <p>HexaFootball is a turn-based football strategy game for PC that blends chess-like tactical depth with the drama of football. Played on a hex-based pitch, the game focuses on positioning, foresight, and calculated decisions rather than reflex-based action.</p>
-            <p>The game features both single-player and multiplayer modes, including a career mode where players define their managerial style, build their squad, and develop long-term strategies. From shaping your team identity to outthinking human opponents online, HexaFootball delivers a football experience driven by planning, not speed.</p>
+            <p>The game features both single-player and multiplayer modes, including a career mode where players define their managerial style, build their squad, and develop long-term strategies.</p>
           </div>
         </section>
 
         <section id="history" class="space-y-6">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">History</h2>
-          <div class="space-y-6 text-white/70 text-lg leading-relaxed">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">History</h2>
+          <div class="space-y-6 text-white/70 text-lg leading-relaxed font-sans">
             <p>HexaFootball began as a passion project by two game design students and friends, born out of their deep interest in strategy and sports games. The project started with a simple question: "What kind of football game would we want to play ourselves?"</p>
-            <p>Driven by a shared love for tactical depth and thoughtful decision-making, they set out to create a football experience that moves away from reflex-based gameplay and toward pure strategy. Development officially began in mid-2025, and through continuous iteration, internal playtests, and design refinements, HexaFootball evolved into a distinct, turn-based tactical football experience built for PC.</p>
+            <p>Driven by a shared love for tactical depth and thoughtful decision-making, they set out to create a football experience that moves away from reflex-based gameplay and toward pure strategy. Development officially began in mid-2025.</p>
           </div>
         </section>
 
-        <section id="features" class="space-y-8">
+        <section id="features" class="space-y-8 font-sans">
           <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">Features</h2>
           <ul class="feature-list max-w-2xl">
             <li>Turn-based football gameplay where strategy, positioning, and foresight matter more than reflexes</li>
@@ -115,12 +108,11 @@
             <li>Multiplayer mode allowing players to outthink real opponents in competitive tactical matches</li>
             <li>Team building and player management systems focused on roles, synergy, and positioning</li>
             <li>Clean, readable, and information-focused UI designed for planning and analysis</li>
-            <li>PC-exclusive experience created for players who enjoy thoughtful, deliberate gameplay</li>
           </ul>
         </section>
 
         <section id="media" class="space-y-16">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">Media Assets</h2>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">Media Assets</h2>
           
           <div class="space-y-8">
             <h3 class="font-display text-2xl">Screenshots</h3>
@@ -133,12 +125,10 @@
                 <img src="../HexaFootball ScreenShot 2.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover w-full" alt="Screenshot 2">
               </div>
             </div>
-            <div class="pt-4 text-left">
-              <a href="../HexaFootball_Screenshots.zip" download class="btn-premium">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                DOWNLOAD ALL SCREENSHOTS
-              </a>
-            </div>
+            <button onclick="downloadScreenshots()" class="btn-premium">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              DOWNLOAD ALL SCREENSHOTS
+            </button>
           </div>
 
           <div class="space-y-8">
@@ -146,60 +136,82 @@
             <div class="aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black">
               <iframe class="w-full h-full" src="https://www.youtube.com/embed/NRQHUrkaNlQ" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="text-left">
-              <a href="../HexaFootball_Trailer.zip" download class="btn-premium">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                DOWNLOAD TRAILER (.ZIP)
-              </a>
-            </div>
           </div>
 
-          <div class="space-y-12 pt-12 border-t border-white/5 text-left">
+          <div class="space-y-12 pt-12 border-t border-white/5">
             <h3 class="font-display text-2xl">Logos & Branding</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center max-w-xl">
               <img src="../HexaFootball Logo.png" class="gallery-img h-32 w-auto object-contain" alt="HexaFootball Logo">
               <img src="../Taka Studio Frame Logo.png" class="gallery-img h-32 w-auto object-contain" alt="Taka Studio Logo">
             </div>
-            <div>
-              <a href="../HexaFootball_Logos.zip" download class="btn-premium">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                DOWNLOAD ALL LOGOS
-              </a>
-            </div>
+            <button onclick="downloadLogos()" class="btn-premium">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              DOWNLOAD ALL LOGOS
+            </button>
           </div>
         </section>
 
-        <section id="contact" class="pt-16 text-left">
-          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6">Contact</h2>
-          <p class="text-foam text-3xl font-display hover:text-white transition-colors cursor-pointer underline underline-offset-8 decoration-white/10">info@takastudio.games</p>
+        <section id="contact" class="pt-16">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">Contact</h2>
+          <p class="text-foam text-3xl font-display underline underline-offset-8 decoration-white/10">info@takastudio.games</p>
         </section>
 
       </main>
     </div>
   </div>
 
-  <div id="lightbox" class="fixed inset-0 bg-black/98 hidden items-center justify-center z-[100] p-4 cursor-zoom-out transition-all duration-300">
-    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-xl shadow-2xl scale-95 transition-transform duration-300">
+  <div id="lightbox" class="fixed inset-0 bg-black/98 hidden items-center justify-center z-[100] p-4 cursor-zoom-out">
+    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-all duration-300">
   </div>
 
   <footer class="py-24 border-t border-white/5 text-center">
-    <p class="text-white/20 text-[10px] uppercase tracking-[0.5em] font-bold">Taka Studio • Designing Worlds, Move by Move</p>
+    <p class="text-white/20 text-[9px] uppercase tracking-[0.5em] font-bold font-sans">© 2026 Taka Studio • Istanbul</p>
   </footer>
 
   <script>
+    // ZIP OLMADAN ÇOKLU İNDİRME FONKSİYONLARI
+    function triggerDownload(url, filename) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function downloadScreenshots() {
+      const files = [
+        ['../HexaFootball ScreenShot 1.png', 'HexaFootball_SS1.png'],
+        ['../HexaFootball ScreenShot 5.png', 'HexaFootball_SS5.png'],
+        ['../HexaFootball ScreenShot 3.png', 'HexaFootball_SS3.png'],
+        ['../HexaFootball ScreenShot 4.png', 'HexaFootball_SS4.png'],
+        ['../HexaFootball ScreenShot 2.png', 'HexaFootball_SS2.png']
+      ];
+      files.forEach(([url, name], i) => {
+        setTimeout(() => triggerDownload(url, name), i * 300); // Tarayıcı engellemesin diye aralıklı indirir
+      });
+    }
+
+    function downloadLogos() {
+      const files = [
+        ['../HexaFootball Logo.png', 'HexaFootball_Logo.png'],
+        ['../Taka Studio Frame Logo.png', 'TakaStudio_Logo.png']
+      ];
+      files.forEach(([url, name], i) => {
+        setTimeout(() => triggerDownload(url, name), i * 300);
+      });
+    }
+
+    // Lightbox JS
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     document.querySelectorAll('.gallery-img').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightbox.classList.replace('hidden', 'flex');
-        setTimeout(() => lightboxImg.classList.replace('scale-95', 'scale-100'), 10);
       });
     });
-    lightbox.addEventListener('click', () => {
-      lightboxImg.classList.replace('scale-100', 'scale-95');
-      setTimeout(() => lightbox.classList.replace('flex', 'hidden'), 200);
-    });
+    lightbox.addEventListener('click', () => lightbox.classList.replace('flex', 'hidden'));
   </script>
 
 </body>

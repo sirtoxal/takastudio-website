@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HexaFootball Press Kit — Taka Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#0C1B2A', sea: '#0E6E6E', sand: '#E5D3B3', foam: '#CFE7E4' },
+          fontFamily: { 
+            display: ['Outfit', 'sans-serif'], 
+            sans: ['Inter', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans SC', 'sans-serif'] 
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .grain::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; z-index: 10;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>');
+      mix-blend-mode: overlay;
+    }
+    section { scroll-margin-top: 140px; }
+    .gallery-img { cursor: zoom-in; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .gallery-img:hover { opacity: 0.9; transform: scale(1.02); }
+    
+    .feature-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem; }
+    .feature-list li::before { content: "●"; position: absolute; left: 0; color: #0E6E6E; font-size: 0.8rem; top: 0.1rem; }
+    
+    .btn-premium { @apply inline-flex items-center gap-2 bg-white/5 hover:bg-sea border border-white/10 hover:border-sea text-white px-8 py-4 rounded-full text-xs font-bold tracking-[0.15em] transition-all duration-300 shadow-xl active:scale-95; }
+    .btn-main { @apply inline-flex items-center gap-2 bg-sea hover:bg-white hover:text-navy text-white px-8 py-4 rounded-full text-xs font-bold tracking-[0.15em] transition-all duration-300 shadow-xl shadow-sea/20 active:scale-95; }
+  </style>
+</head>
+
+<body class="bg-navy text-white antialiased font-sans grain pt-20">
+
+  <header class="fixed top-0 left-0 w-full z-[100] bg-navy border-b border-white/10 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center text-[10px] font-bold tracking-[0.2em] uppercase">
+      
+      <a href="https://takastudio.games" class="flex items-center gap-2 hover:text-sea transition-all group">
+        <svg class="group-hover:scale-110 transition-transform" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        HOME
+      </a>
+
+      <nav class="flex gap-4 items-center">
+        <a href="https://www.takastudio.games/presskit" class="hover:text-sea transition-colors text-white/40">ENGLISH</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/tr" class="hover:text-sea transition-colors text-white/40">TÜRKÇE</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/es" class="hover:text-sea transition-colors text-white">ESPAÑOL</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/pt" class="hover:text-sea transition-colors text-white/40">PORTUGUÊS</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/jp" class="hover:text-sea transition-colors text-white/40">日本語</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/kr" class="hover:text-sea transition-colors text-white/40">한국어</a>
+        <span class="opacity-10">|</span>
+        <a href="https://www.takastudio.games/presskit/cn" class="hover:text-sea transition-colors text-white/40">简体中文</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="w-full aspect-[3/1] overflow-hidden relative border-b border-white/10">
+    <img src="../../HexaFootball_Twitter_Cover.png" class="w-full h-full object-cover" alt="HexaFootball Banner">
+    <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/5 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-20 pb-32">
+    <div class="flex flex-col lg:flex-row gap-12">
+      
+      <aside class="w-full lg:w-80 flex-shrink-0">
+        <div class="lg:sticky lg:top-32 space-y-8">
+          <div class="rounded-3xl overflow-hidden border border-white/20 shadow-2xl shadow-black/60 bg-navy transition-all duration-500 hover:shadow-sea/20">
+            <img src="../../HexaFootball 748x896 Art.png" class="w-full h-auto" alt="HexaFootball Art">
+          </div>
+          <nav class="flex flex-col space-y-1 text-[11px] font-bold tracking-widest uppercase text-white/30 pt-4">
+            <a href="#pitch" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">PITCH</a>
+            <a href="#history" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">HISTORIA</a>
+            <a href="#features" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">CARACTERÍSTICAS</a>
+            <a href="#media" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all text-sea">RECURSOS MULTIMEDIA</a>
+            <a href="#contact" class="py-2.5 px-4 hover:text-foam hover:bg-white/5 rounded-xl transition-all">CONTACTO</a>
+          </nav>
+        </div>
+      </aside>
+
+      <aside class="w-full lg:w-64 flex-shrink-0 lg:border-r lg:border-l border-white/5 lg:px-8 space-y-10">
+        <div class="lg:sticky lg:top-32">
+          <h2 class="font-display text-2xl mb-8 border-b border-sea/30 pb-3">Ficha Técnica</h2>
+          <div class="space-y-8 text-sm">
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Desarrollador</h3><p class="text-white/80">Taka Studio<br><span class="opacity-50 font-normal">Estambul, Turquía</span></p></div>
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Fecha de Lanzamiento</h3><p class="text-white/80">Planeada: 2026</p></div>
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Plataformas</h3><p class="text-white/80 underline decoration-white/10 underline-offset-4 font-sans">PC (Steam)</p></div>
+            <div><h3 class="text-[10px] font-bold text-sea uppercase tracking-[0.2em] mb-2">Sitio Web</h3><a href="https://takastudio.games" class="hover:text-foam transition underline decoration-white/10 font-sans">takastudio.games</a></div>
+            
+            <div class="pt-8">
+              <a href="../../All Media.zip" download="All Media.zip" class="btn-main w-full text-center uppercase">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                DESCARGAR TODO EL MATERIAL
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="flex-1 space-y-24 lg:pl-6 text-left">
+        
+        <section id="pitch">
+          <h1 class="font-display text-6xl mb-10 tracking-tight text-white leading-none">HexaFootball</h1>
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">PITCH</h2>
+          <p class="text-2xl leading-relaxed text-foam italic border-l-4 border-sea pl-8 py-2">HexaFootball es un juego de estrategia de fútbol por turnos que combina la profundidad táctica del ajedrez con la intensidad emocional del fútbol. Cada pase, movimiento y tiro es una decisión calculada en lugar de una prueba de reflejos.</p>
+          
+          <div class="mt-12 space-y-8 text-white/70 text-lg leading-relaxed max-w-2xl font-sans text-left">
+            <p>HexaFootball es un juego de estrategia de fútbol por turnos para PC que combina la profundidad táctica del ajedrez con el drama del fútbol. Jugado en un campo basado en hexágonos, el juego se centra en el posicionamiento, la previsión y las decisiones calculadas en lugar de la acción basada en reflejos.</p>
+            <p>El juego cuenta con modos para un solo jugador y multijugador, incluyendo un modo carrera donde los jugadores definen su estilo de gestión, construyen su plantilla y desarrollan estrategias a largo plazo. Desde dar forma a la identidad de tu equipo hasta superar tácticamente a oponentes reales en línea, HexaFootball ofrece una experiencia futbolística impulsada por la planificación, no por la velocidad.</p>
+          </div>
+        </section>
+
+        <section id="history" class="space-y-6 text-left">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">HISTORIA</h2>
+          <div class="space-y-6 text-white/70 text-lg leading-relaxed font-sans text-left">
+            <p>HexaFootball comenzó como un proyecto apasionado de dos estudiantes de diseño de juegos y amigos, nacido de su profundo interés en los juegos de estrategia y deportes. El proyecto empezó con una pregunta sencilla: "¿Qué tipo de juego de fútbol nos gustaría jugar a nosotros mismos?"</p>
+            <p>Impulsados por un amor compartido por la profundidad táctica ve decisiones meditadas, se propusieron crear una experiencia futbolística que se alejara de la jugabilidad basada en reflejos para centrarse en la estrategia pura. El desarrollo comenzó oficialmente a mediados de 2025 y, a través de iteraciones continuas, pruebas internas y refinamientos de diseño, HexaFootball evolucionó hacia una experiencia de fútbol táctico por turnos única construida para PC.</p>
+          </div>
+        </section>
+
+        <section id="features" class="space-y-8 font-sans text-left">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold">CARACTERÍSTICAS</h2>
+          <ul class="feature-list max-w-2xl text-left">
+            <li>Jugabilidad de fútbol por turnos donde la estrategia, el posicionamiento y la previsión importan más que los reflejos.</li>
+            <li>Campo basado en una rejilla hexagonal que transforma el fútbol en un tablero táctico similar al ajedrez.</li>
+            <li>Toma de decisiones tácticas profundas inspirada en juegos de mesa y sistemas de estrategia clásicos.</li>
+            <li>Modo carrera con elecciones de estilo de gestión, construcción de plantillas y desarrollo de equipos a largo plazo.</li>
+            <li>Modo multijugador que permite a los jugadores superar tácticamente a oponentes reales en partidos competitivos.</li>
+            <li>Sistemas de construcción de equipos y gestión de jugadores centrados en roles, sinergia y posicionamiento.</li>
+            <li>Interfaz de usuario limpia, legible y enfocada en la información, diseñada para la planificación y el análisis.</li>
+            <li>Experiencia exclusiva para PC creada para jugadores que disfrutan de una jugabilidad reflexiva y deliberada.</li>
+          </ul>
+        </section>
+
+        <section id="media" class="space-y-16 text-left">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold font-sans">RECURSOS MULTIMEDIA</h2>
+          
+          <div class="space-y-8">
+            <h3 class="font-display text-2xl">Capturas de Pantalla</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <img src="../../HexaFootball ScreenShot 1.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover" alt="Captura 1">
+              <img src="../../HexaFootball ScreenShot 5.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover" alt="Captura 5">
+              <img src="../../HexaFootball ScreenShot 3.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover" alt="Captura 3">
+              <img src="../../HexaFootball ScreenShot 4.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover" alt="Captura 4">
+              <div class="md:col-span-2">
+                <img src="../../HexaFootball ScreenShot 2.png" class="gallery-img rounded-2xl border border-white/5 aspect-video object-cover w-full" alt="Captura 2">
+              </div>
+            </div>
+            <div class="pt-4">
+              <a href="../../HexaFootball%20ScreenShots.zip" download class="btn-premium">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                DESCARGAR TODAS LAS CAPTURAS (.ZIP)
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <h3 class="font-display text-2xl font-bold">Tráiler Oficial</h3>
+            <div class="aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/NRQHUrkaNlQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="text-left pt-2">
+              <a href="https://drive.google.com/file/d/1HEMj69HldlsF164n-C73Vx6qxNOc0wJ5/view?usp=drive_link" target="_blank" class="btn-premium">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                DESCARGAR TRÁILER (MP4)
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-12 pt-12 border-t border-white/5 text-left">
+            <h3 class="font-display text-2xl font-bold">Logos y Marca</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center max-w-xl">
+              <img src="../../HexaFootball Logo.png" class="gallery-img h-32 w-auto object-contain" alt="HexaFootball Logo">
+              <img src="../../Taka Studio Frame Logo.png" class="gallery-img h-32 w-auto object-contain" alt="Taka Studio Logo">
+            </div>
+            <div>
+              <a href="../../Logos.zip" download class="btn-premium">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                DESCARGAR TODOS LOS LOGOS (.ZIP)
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="pt-16 text-left pb-32">
+          <h2 class="text-[11px] uppercase tracking-[0.3em] text-sea font-bold mb-6 font-sans">CONTACTO</h2>
+          <p class="text-foam text-3xl font-display hover:text-white transition-colors cursor-pointer underline underline-offset-8 decoration-white/10 font-bold">info@takastudio.games</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="py-24 border-t border-white/5 text-center bg-navy relative z-20">
+    <p class="text-white/20 text-[10px] uppercase tracking-[0.5em] font-extrabold font-sans">© 2026 Taka Studio • Estambul</p>
+  </footer>
+
+  <div id="lightbox" class="fixed inset-0 bg-black/98 hidden items-center justify-center z-[110] p-4 cursor-zoom-out transition-all duration-300">
+    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.replace('hidden', 'flex');
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.replace('flex', 'hidden');
+    });
+  </script>
+
+</body>
+</html>

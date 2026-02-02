@@ -38,11 +38,11 @@
     .feature-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem; }
     .feature-list li::before { content: "●"; position: absolute; left: 0; color: #0E6E6E; font-size: 0.8rem; top: 0.1rem; }
     
-    /* Buton Tasarımları */
-    .btn-download-primary { @apply flex items-center justify-center gap-3 bg-sea hover:bg-white hover:text-navy text-white px-6 py-5 rounded-2xl text-[11px] font-bold tracking-[0.2em] transition-all duration-300 shadow-xl shadow-sea/20 active:scale-[0.98] uppercase w-full; }
-    .btn-download-secondary { @apply flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-4 rounded-2xl text-[10px] font-bold tracking-[0.15em] transition-all duration-300 active:scale-[0.98] uppercase w-full; }
+    /* Buton Tasarımları - İkon ve Yazı Yan Yana (flex-row) */
+    .btn-download-primary { @apply flex flex-row items-center justify-center gap-3 bg-sea hover:bg-white hover:text-navy text-white px-6 py-5 rounded-2xl text-[11px] font-bold tracking-[0.15em] transition-all duration-300 shadow-xl shadow-sea/20 active:scale-[0.98] uppercase w-full; }
+    .btn-download-secondary { @apply flex flex-row items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-4 rounded-2xl text-[10px] font-bold tracking-[0.1em] transition-all duration-300 active:scale-[0.98] uppercase w-full; }
     
-    .sidebar-label { @apply text-[10px] font-bold text-sea uppercase tracking-[0.3em] mb-2 block opacity-80; }
+    .sidebar-label { @apply text-[10px] font-bold text-sea uppercase tracking-[0.3em] mb-1.5 block opacity-80; }
   </style>
 </head>
 
@@ -55,9 +55,9 @@
         HOME
       </a>
       <nav class="flex gap-4 items-center">
-        <a href="#" class="text-white">ENGLISH</a>
+        <a href="https://www.takastudio.games/presskit" class="text-white">ENGLISH</a>
         <span class="opacity-10">|</span>
-        <a href="#" class="text-white/40 hover:text-sea">TÜRKÇE</a>
+        <a href="https://www.takastudio.games/presskit/tr" class="text-white/40 hover:text-sea">TÜRKÇE</a>
         <span class="opacity-10">|</span>
         <a href="#" class="text-white/40 hover:text-sea text-[9px]">日本語 / 한국어 / 简体中文</a>
       </nav>
@@ -65,12 +65,12 @@
   </header>
 
   <div class="w-full aspect-[4/1] overflow-hidden relative border-b border-white/10">
-    <img src="../HexaFootball_Twitter_Cover.png" class="w-full h-full object-cover" alt="Banner">
+    <img src="../HexaFootball_Twitter_Cover.png" class="w-full h-full object-cover" alt="HexaFootball">
     <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent"></div>
   </div>
 
   <div class="max-w-[1500px] mx-auto px-6 mt-16 relative z-20 pb-40">
-    <div class="flex flex-col lg:flex-row gap-12 justify-center">
+    <div class="flex flex-col lg:flex-row gap-8 xl:gap-14 justify-center">
       
       <aside class="w-full lg:w-56 flex-shrink-0">
         <div class="lg:sticky lg:top-32 space-y-8">
@@ -81,19 +81,19 @@
             <a href="#pitch" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all">PITCH</a>
             <a href="#history" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all">HISTORY</a>
             <a href="#features" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all">FEATURES</a>
-            <a href="#media" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all">MEDIA</a>
+            <a href="#media" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all text-sea">MEDIA</a>
             <a href="#contact" class="py-3 px-4 hover:text-sea hover:bg-white/5 rounded-xl transition-all">CONTACT</a>
           </nav>
         </div>
       </aside>
 
-      <aside class="w-full lg:w-60 flex-shrink-0 space-y-10">
+      <aside class="w-full lg:w-60 flex-shrink-0">
         <div class="lg:sticky lg:top-32">
           <h2 class="font-display text-2xl mb-8 border-b border-sea/30 pb-3 uppercase tracking-wider">Factsheet</h2>
           <div class="space-y-8 text-sm">
             <div>
               <span class="sidebar-label">Developer</span>
-              <p class="text-white/80">Taka Studio<br><span class="opacity-40 text-xs">Istanbul, Turkey</span></p>
+              <p class="text-white/80">Taka Studio<br><span class="opacity-40 text-[11px] font-normal">Istanbul, Turkey</span></p>
             </div>
             <div>
               <span class="sidebar-label">Release Date</span>
@@ -101,11 +101,11 @@
             </div>
             <div>
               <span class="sidebar-label">Platforms</span>
-              <p class="text-white/80">PC (Steam)</p>
+              <p class="text-white/80 underline decoration-white/10 underline-offset-4">PC (Steam)</p>
             </div>
             <div>
               <span class="sidebar-label">Website</span>
-              <a href="https://takastudio.games" class="block mt-1 text-sea hover:text-white transition underline decoration-sea/30 underline-offset-4">takastudio.games</a>
+              <a href="https://takastudio.games" target="_blank" class="block text-sea hover:text-white transition underline decoration-sea/30 underline-offset-8">takastudio.games</a>
             </div>
           </div>
         </div>
@@ -114,33 +114,32 @@
       <main class="flex-1 max-w-2xl space-y-32">
         <section id="pitch">
           <h1 class="font-display text-7xl mb-12 tracking-tighter leading-none">HexaFootball</h1>
-          <p class="text-2xl leading-relaxed text-foam italic border-l-4 border-sea pl-8 py-2">A turn-based football strategy game that blends tactical depth with emotional intensity.</p>
+          <h2 class="sidebar-label text-sea mb-4">The Pitch</h2>
+          <p class="text-2xl leading-relaxed text-foam italic border-l-4 border-sea pl-8 py-2">HexaFootball is a turn-based football strategy game that blends tactical depth with emotional intensity.</p>
           <div class="mt-12 space-y-8 text-white/60 text-lg leading-relaxed font-sans">
-            <p>HexaFootball is a turn-based strategy game for PC that reimagines football as a tactical battle. Every move is a calculated decision on a hexagonal grid.</p>
+            <p>HexaFootball is a turn-based strategy game for PC that reimagines football as a tactical battle. Played on a hex-based pitch, it focuses on positioning and foresight rather than reflex action.</p>
           </div>
         </section>
 
-        <section id="history">
+        <section id="history" class="space-y-6">
           <h2 class="sidebar-label text-sea">History</h2>
-          <div class="mt-6 space-y-6 text-white/60 text-lg leading-relaxed">
-            <p>Started as a passion project in 2025, HexaFootball focuses on positioning and foresight rather than reflex-based action.</p>
-          </div>
+          <p class="text-white/60 text-lg leading-relaxed">HexaFootball began as a passion project by two game design students. Development officially began in mid-2025.</p>
         </section>
 
-        <section id="features" class="space-y-12">
+        <section id="features" class="space-y-8">
           <h2 class="sidebar-label text-sea">Features</h2>
-          <ul class="feature-list space-y-4">
-            <li>Turn-based tactical gameplay on a hexagonal pitch.</li>
-            <li>Deep management systems and squad building.</li>
-            <li>Multiplayer and Career modes.</li>
+          <ul class="feature-list">
+            <li>Turn-based football gameplay</li>
+            <li>Hexagonal grid pitch mechanics</li>
+            <li>Multiplayer & Career modes</li>
           </ul>
         </section>
 
         <section id="media" class="space-y-16">
           <h2 class="sidebar-label text-sea">Media Assets</h2>
           <div class="grid grid-cols-2 gap-4">
-            <img src="../HexaFootball ScreenShot 1.png" class="gallery-img rounded-xl border border-white/5 aspect-video object-cover">
-            <img src="../HexaFootball ScreenShot 2.png" class="gallery-img rounded-xl border border-white/5 aspect-video object-cover">
+            <img src="../HexaFootball ScreenShot 1.png" class="gallery-img rounded-xl border border-white/5 aspect-video object-cover" alt="SS1">
+            <img src="../HexaFootball ScreenShot 2.png" class="gallery-img rounded-xl border border-white/5 aspect-video object-cover" alt="SS2">
           </div>
         </section>
 
@@ -153,30 +152,32 @@
       <aside class="w-full lg:w-80 flex-shrink-0">
         <div class="lg:sticky lg:top-32 space-y-6">
           
-          <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-md shadow-2xl">
+          <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 backdrop-blur-md shadow-2xl">
             <h3 class="text-[11px] font-bold text-sea uppercase tracking-[0.4em] mb-8 text-center border-b border-white/5 pb-4">Resources</h3>
             <div class="space-y-4">
               <a href="../All Media.zip" class="btn-download-primary group">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                Download All Media
+                <span>Download All Media</span>
               </a>
+              
               <div class="grid grid-cols-1 gap-3 pt-4 border-t border-white/5">
                 <a href="../HexaFootball%20ScreenShots.zip" class="btn-download-secondary">
                   <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                  Screenshots
+                  <span>Screenshots</span>
                 </a>
+                
                 <a href="../Logos.zip" class="btn-download-secondary">
                   <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                  Logos
+                  <span>Logos</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 text-center">
+          <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-center">
             <span class="sidebar-label">Trailer Link</span>
-            <a href="https://drive.google.com/file/d/..." target="_blank" class="inline-flex items-center gap-2 text-white/40 hover:text-sea transition-all text-[11px] font-bold tracking-widest uppercase">
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            <a href="https://drive.google.com/file/d/1HEMj69HldlsF164n-C73Vx6qxNOc0wJ5/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-white/40 hover:text-sea transition-all text-[10px] font-bold tracking-widest uppercase">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               View on Google Drive
             </a>
           </div>
@@ -187,12 +188,12 @@
     </div>
   </div>
 
-  <footer class="py-20 border-t border-white/5 text-center bg-navy">
+  <footer class="py-24 border-t border-white/5 text-center bg-navy">
     <p class="text-white/10 text-[10px] uppercase tracking-[0.5em] font-bold">© 2026 Taka Studio • Istanbul</p>
   </footer>
 
   <div id="lightbox" class="fixed inset-0 bg-black/98 hidden items-center justify-center z-[110] p-4 cursor-zoom-out">
-    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-xl transition-all duration-300 shadow-2xl">
+    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-xl shadow-2xl transition-all duration-300">
   </div>
 
   <script>
@@ -208,5 +209,6 @@
       lightbox.classList.replace('flex', 'hidden');
     });
   </script>
+
 </body>
 </html>

@@ -24,19 +24,12 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            navy: '#0C1B2A',
-            sea: '#0E6E6E',
-            sand: '#E5D3B3',
-            foam: '#CFE7E4',
+          colors: { navy: '#0C1B2A', sea: '#0E6E6E', sand: '#E5D3B3', foam: '#CFE7E4' },
+          fontFamily: { 
+            display: ['Outfit', 'system-ui', 'sans-serif'], 
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'] 
           },
-          fontFamily: {
-            display: ['Outfit', 'system-ui', 'sans-serif'],
-            sans: ['Inter', 'ui-sans-serif', 'system-ui']
-          },
-          boxShadow: {
-            soft: '0 10px 25px rgba(0,0,0,.08)'
-          }
+          boxShadow: { soft: '0 10px 25px rgba(0,0,0,.08)' }
         }
       }
     }
@@ -48,19 +41,17 @@
     .grain::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>'); mix-blend-mode: overlay; }
     .reveal { opacity: 0; transform: translateY(12px); transition: .6s ease; }
     .reveal.show { opacity: 1; transform: none; }
-    .hex-bg {
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
+    .hex-bg { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 24px 24px; }
     section { scroll-margin-top: 60px; }
   </style>
 </head>
 <body class="bg-navy text-white antialiased">
+
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
         <img src="assets/takastudio_logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm">
-        <span class="font-display text-lg tracking-wide">Taka Studio</span>
+        <span class="font-display text-lg tracking-wide uppercase">Taka Studio</span>
       </a>
       <nav class="hidden md:flex items-center gap-4 text-sm">
         <a href="#games" class="hover:text-foam px-2">Games</a>
@@ -69,15 +60,15 @@
         <a href="#news" class="hover:text-foam px-2">News</a>
         <a href="#contact" class="hover:text-foam px-2">Contact</a>
         
-        <div class="flex items-center gap-2 ml-2">
+        <div class="flex items-center gap-2 ml-2 font-bold">
           <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition">
-            <span>Wishlist on Steam</span>
+             class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft transition uppercase text-[10px] tracking-widest">
+            Wishlist on Steam
           </a>
           <a href="https://www.takastudio.games/presskit"
-             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white px-4 py-2 rounded-xl transition">
+             class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded-xl transition uppercase text-[10px] tracking-widest">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2zM14 4v4h4"/></svg>
-            <span>Press Kit</span>
+            Press Kit
           </a>
         </div>
       </nav>
@@ -86,14 +77,14 @@
       </button>
     </div>
     <div id="mobileMenu" class="md:hidden hidden bg-navy border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 py-3 space-y-3">
-        <a href="#games" class="block">Games</a>
-        <a href="#about" class="block">About</a>
-        <a href="#news" class="block">News</a>
-        <a href="#contact" class="block">Contact</a>
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-3 font-bold text-[11px] tracking-widest uppercase">
+        <a href="#games" class="block hover:text-sea">Games</a>
+        <a href="#about" class="block hover:text-sea">About</a>
+        <a href="#news" class="block hover:text-sea">News</a>
+        <a href="#contact" class="block hover:text-sea">Contact</a>
         <div class="pt-2 flex flex-col gap-2">
-          <a href="https://store.steampowered.com/" class="inline-flex items-center justify-center gap-2 bg-sea/90 hover:bg-sea text-white px-4 py-2 rounded-xl shadow-soft w-full">Wishlist on Steam</a>
-          <a href="https://www.takastudio.games/presskit" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/10 text-white px-4 py-2 rounded-xl w-full">Press Kit</a>
+          <a href="https://store.steampowered.com/" class="inline-flex items-center justify-center bg-sea text-white px-4 py-3 rounded-xl shadow-soft">Wishlist on Steam</a>
+          <a href="https://www.takastudio.games/presskit" class="inline-flex items-center justify-center bg-white/5 border border-white/10 text-white px-4 py-3 rounded-xl">Press Kit</a>
         </div>
       </div>
     </div>
@@ -108,13 +99,13 @@
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">Designing Worlds, <span class="text-foam">Move by Move</span>.</h1>
             <p class="mt-5 text-white/80 max-w-xl">Taka Studio is an independent game studio based in Istanbul crafting design‑driven experiences. Our current project is <strong>HexaFootball</strong> — a turn‑based football strategy game for PC.</p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="https://youtu.be/CCazcCdP1sY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-5 py-3 rounded-xl shadow-soft">Explore HexaFootball</a>
-              <a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl">Contact Us</a>
+              <a href="https://youtu.be/CCazcCdP1sY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-6 py-3 rounded-xl shadow-soft font-bold uppercase text-[11px] tracking-widest">Explore HexaFootball</a>
+              <a href="#contact" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl font-bold uppercase text-[11px] tracking-widest">Contact Us</a>
             </div>
           </div>
           <div class="reveal">
             <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-soft bg-white/5">
-              <img src="HexaFootball_Steam_Capsule_1232 x 706.png" alt="HexaFootball illustration" class="w-full h-auto block" />
+              <img src="HexaFootball_Steam_Capsule_1232 x 706.png" alt="HexaFootball" class="w-full h-auto block" />
               <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy"></div>
             </div>
           </div>
@@ -143,48 +134,137 @@
 
       <div class="mt-10 flex flex-wrap items-center gap-4 reveal">
         <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 bg-sea/90 hover:bg-sea px-6 py-3 rounded-xl shadow-soft transition">
-          <span>Add to your Steam Wishlist</span>
+           class="inline-flex items-center gap-2 bg-sea hover:bg-sea/80 px-6 py-3 rounded-xl shadow-soft transition font-bold uppercase text-[11px] tracking-widest">
+          Add to your Steam Wishlist
         </a>
         <a href="https://www.takastudio.games/presskit"
-           class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-xl transition shadow-soft">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          <span>View Press Kit</span>
+           class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-xl transition shadow-soft font-bold uppercase text-[11px] tracking-widest">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          View Press Kit
         </a>
-        
         <div class="w-full md:w-auto mt-2 md:mt-0">
-          <span class="text-white/60 text-sm">Planned release: 2026 • Platform: PC (Steam)</span>
+          <span class="text-white/40 text-[10px] uppercase tracking-widest">Planned release: 2026 • Platform: PC (Steam)</span>
         </div>
       </div>
     </div>
   </section>
 
-  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60]">
-    <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-xl shadow-soft cursor-pointer">
+  <section id="about" class="py-24 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <h2 class="font-display text-3xl sm:text-4xl">About Taka Studio</h2>
+      <p class="mt-6 text-white/80 leading-relaxed text-lg">
+        Based in Istanbul, Taka Studio is a small, ambitious team creating original, design-driven games with clarity and craft.
+        The name <em>“Taka”</em> refers to a traditional small boat from Türkiye’s Black Sea coast — a symbol of exploration, resilience, and handmade quality.
+      </p>
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-[10px] font-bold tracking-[0.2em] uppercase text-sea">
+        <div class="p-4 border border-white/5 rounded-2xl">Creativity</div>
+        <div class="p-4 border border-white/5 rounded-2xl">Clarity</div>
+        <div class="p-4 border border-white/5 rounded-2xl">Collaboration</div>
+        <div class="p-4 border border-white/5 rounded-2xl">Craftsmanship</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="py-24 bg-[#0d2236]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl uppercase tracking-tight">News & Devlog</h2>
+        <p class="mt-3 text-white/50 max-w-2xl">Development updates and behind-the-scenes notes.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 flex flex-col hover:border-sea transition-all group">
+          <h3 class="font-display text-xl group-hover:text-foam transition-colors">Prototype Milestone</h3>
+          <p class="mt-4 text-white/60 text-sm leading-relaxed">We reached a core-loop prototype for HexaFootball and began internal playtesting to validate pacing and clarity.</p>
+          <a href="#" class="mt-auto pt-6 text-[10px] font-bold uppercase tracking-widest text-sea hover:text-foam">Read more →</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 flex flex-col hover:border-sea transition-all group">
+          <h3 class="font-display text-xl group-hover:text-foam transition-colors">Art Direction Peek</h3>
+          <p class="mt-4 text-white/60 text-sm leading-relaxed">Exploring hex-grid UI, motion lines, and a minimal palette inspired by the Black Sea.</p>
+          <a href="#" class="mt-auto pt-6 text-[10px] font-bold uppercase tracking-widest text-sea hover:text-foam">Read more →</a>
+        </article>
+        <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 flex flex-col hover:border-sea transition-all group">
+          <h3 class="font-display text-xl group-hover:text-foam transition-colors">Steam Page Prep</h3>
+          <p class="mt-4 text-white/60 text-sm leading-relaxed">Gathering captures, writing capsule copy, and preparing the wishlist campaign.</p>
+          <a href="#" class="mt-auto pt-6 text-[10px] font-bold uppercase tracking-widest text-sea hover:text-foam">Read more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 pb-48">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center">
+        <h2 class="font-display text-4xl sm:text-5xl uppercase tracking-tighter">Contact</h2>
+        <p class="mt-6 text-white/60 text-lg">
+          Want to reach out about HexaFootball? Send a message below or:
+          <br>
+          <span id="emailCopy" class="text-foam hover:underline cursor-pointer select-all font-bold block mt-2">info@takastudio.games</span>
+          <span id="copyMsg" class="text-[10px] font-bold text-green-400 hidden uppercase tracking-widest">Copied!</span>
+        </p>
+      </div>
+      
+      <form id="contactForm" class="mt-16 reveal grid gap-6" action="https://formsubmit.co/studiotakagames@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_honey" style="display:none">
+        
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-[10px] font-bold uppercase tracking-widest text-white/30 ml-2" for="name">Name</label>
+            <input id="name" name="name" required class="w-full rounded-2xl bg-white/5 border border-white/10 px-6 py-4 outline-none focus:ring-2 focus:ring-sea/60 transition-all" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-[10px] font-bold uppercase tracking-widest text-white/30 ml-2" for="email">Email</label>
+            <input id="email" type="email" name="email" required class="w-full rounded-2xl bg-white/5 border border-white/10 px-6 py-4 outline-none focus:ring-2 focus:ring-sea/60 transition-all" />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-[10px] font-bold uppercase tracking-widest text-white/30 ml-2" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-2xl bg-white/5 border border-white/10 px-6 py-4 outline-none focus:ring-2 focus:ring-sea/60 transition-all"></textarea>
+        </div>
+        <button type="submit" class="bg-sea hover:bg-foam hover:text-navy text-white px-10 py-5 rounded-2xl shadow-soft font-bold uppercase text-[12px] tracking-[0.3em] transition-all">Send Message</button>
+        <p id="successMessage" class="hidden text-green-400 text-center font-bold uppercase tracking-widest text-xs">✅ Message sent successfully!</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-12 border-t border-white/5 bg-[#0b1724]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+      <p class="text-white/20 text-[10px] uppercase tracking-[0.4em] font-bold">© <span id="year"></span> Taka Studio • Istanbul</p>
+      <div class="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-white/40">
+        <a href="https://store.steampowered.com/" target="_blank" class="hover:text-foam transition-colors">Steam</a>
+        <a href="https://x.com/takastudiogames" target="_blank" class="hover:text-foam transition-colors">X</a>
+        <a href="https://www.linkedin.com/company/taka-game-studio" target="_blank" class="hover:text-foam transition-colors">LinkedIn</a>
+        <a href="https://discord.gg/9uWpzF4U" target="_blank" class="hover:text-foam transition-colors">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="fixed inset-0 bg-black/98 hidden items-center justify-center z-[100] p-4 cursor-zoom-out">
+    <img id="lightbox-img" class="max-w-full max-h-full rounded-2xl shadow-2xl transition-transform duration-300">
   </div>
 
   <script>
-    // Year update
+    // Dinamik Yıl
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
+    // Mobil Menü
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if (menuBtn && mobileMenu) {
       menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
 
-    // Reveal animations
+    // Reveal (Kaydırdıkça Göster) Animasyonu
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) e.target.classList.add('show');
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
     revealEls.forEach((el) => io.observe(el));
 
-    // Form Handling
+    // Form İşleme
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("successMessage");
     if(form) {
@@ -203,7 +283,7 @@
       });
     }
 
-    // Lightbox Logic
+    // Galeri & Lightbox
     const images = document.querySelectorAll(".gallery-img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -212,39 +292,27 @@
     images.forEach(img => {
       img.addEventListener("click", () => {
         currentIndex = parseInt(img.dataset.index);
-        openLightbox();
+        lightboxImg.src = images[currentIndex].src;
+        lightbox.classList.replace('hidden', 'flex');
       });
     });
 
-    function openLightbox() {
-      lightboxImg.src = images[currentIndex].src;
-      lightbox.classList.remove("hidden");
-      lightbox.classList.add("flex");
-    }
-
-    lightboxImg.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      openLightbox();
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.replace('flex', 'hidden');
     });
 
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.add("hidden");
-        lightbox.classList.remove("flex");
-      }
-    });
-
-    // Email Copy Logic
+    // E-posta Kopyalama
     const emailEl = document.getElementById("emailCopy");
     const copyMsg = document.getElementById("copyMsg");
     if(emailEl) {
       emailEl.addEventListener("click", () => {
         navigator.clipboard.writeText(emailEl.textContent.trim()).then(() => {
           copyMsg.classList.remove("hidden");
-          setTimeout(() => copyMsg.classList.add("hidden"), 1500);
+          setTimeout(() => copyMsg.classList.add("hidden"), 2000);
         });
       });
     }
   </script>
+
 </body>
 </html>

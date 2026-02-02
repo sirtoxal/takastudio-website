@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Press Kit — HexaFootball</title>
+  <title>HexaFootball Press Kit — Taka Studio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,19 +30,16 @@
   </script>
 
   <style>
+    html { scroll-behavior: smooth; }
     .grain { position: relative; }
     .grain::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: .08;
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .08;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".3"/></svg>');
       mix-blend-mode: overlay;
     }
-
-    .sidebar-link { @apply block py-2 text-white/60 hover:text-foam transition-colors; }
     section { scroll-margin-top: 100px; }
+    .gallery-img { cursor: zoom-in; transition: transform 0.2s; }
+    .gallery-img:hover { transform: scale(1.02); }
   </style>
 </head>
 
@@ -51,10 +48,9 @@
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/60 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3">
-        <img src="../assets/hexafootball_logo.png" alt="HexaFootball logo" class="h-7 w-7 rounded-sm">
+        <img src="../assets/takastudio_logo.png" alt="Taka Studio logo" class="h-7 w-7 rounded-sm">
         <span class="font-display text-lg tracking-wide">
-          HexaFootball
-          <span class="text-foam ml-2 text-sm opacity-70">Press Kit</span>
+          HexaFootball <span class="text-foam ml-2 text-sm opacity-70">Press Kit</span>
         </span>
       </a>
       <a href="/" class="text-sm hover:text-foam border border-white/20 px-4 py-1.5 rounded-lg transition">
@@ -67,21 +63,21 @@
     <div class="flex flex-col lg:flex-row gap-12">
       
       <aside class="lg:w-64 flex-shrink-0">
-        <div class="sticky top-24 space-y-1 text-sm">
-          <p class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-4">Contents</p>
-          <a href="#factsheet" class="sidebar-link">Factsheet</a>
-          <a href="#description" class="sidebar-link">Description</a>
-          <a href="#features" class="sidebar-link">Key Features</a>
-          <a href="#history" class="sidebar-link">Development History</a>
-          <a href="#images" class="sidebar-link">Images & Logos</a>
-          <a href="#contact" class="sidebar-link">Contact</a>
+        <div class="sticky top-24 flex flex-col space-y-2 text-sm text-left">
+          <p class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Contents</p>
+          <a href="#factsheet" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Factsheet</a>
+          <a href="#description" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Description</a>
+          <a href="#features" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Key Features</a>
+          <a href="#history" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Development History</a>
+          <a href="#images" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Images & Logos</a>
+          <a href="#contact" class="py-2 text-white/60 hover:text-foam transition-colors border-l border-white/10 pl-4 hover:border-foam">Contact</a>
         </div>
       </aside>
 
       <main class="flex-1 max-w-3xl">
         
         <section id="factsheet" class="mb-16">
-          <h1 class="font-display text-4xl mb-8">Factsheet</h1>
+          <h1 class="font-display text-4xl mb-8">HexaFootball Press Kit</h1>
           <div class="grid sm:grid-cols-2 gap-8 text-sm border-l-2 border-sea pl-6">
             <div>
               <h3 class="font-bold text-foam mb-1">Title:</h3>
@@ -101,11 +97,11 @@
             </div>
             <div>
               <h3 class="font-bold text-foam mb-1">Website:</h3>
-              <p><a href="https://hexafootball.com" class="underline">hexafootball.com</a></p>
+              <p><a href="https://takastudio.games" class="underline">takastudio.games</a></p>
             </div>
             <div>
               <h3 class="font-bold text-foam mb-1">Press Contact:</h3>
-              <p>press@takastudio.games</p>
+              <p>info@takastudio.games</p>
             </div>
           </div>
         </section>
@@ -118,16 +114,13 @@
             HexaFootball is a turn-based football strategy game that reimagines the sport through tactical decision-making rather than reflex-driven action.
             Every pass, movement, and shot takes place on a hex-based grid where foresight and planning define success.
           </p>
-          <p>
-            Inspired by board games and classic strategy titles, HexaFootball blends the emotional highs of football with the mental depth of turn-based gameplay.
-          </p>
         </section>
 
         <section id="features" class="mb-16">
           <h2 class="font-display text-2xl mb-4">Key Features</h2>
           <ul class="list-disc list-inside text-white/80 space-y-2">
             <li>Turn-based football gameplay on a hexagonal grid</li>
-            <li>Positioning, passing lanes, and tactical foresight over reflexes</li>
+            <li>Positioning, passing lanes, and tactical foresight</li>
             <li>Clear, readable UI focused on strategic clarity</li>
             <li>PC-first design with competitive and single-player modes</li>
           </ul>
@@ -136,7 +129,6 @@
         <section id="history" class="mb-16 text-white/80 leading-relaxed">
           <h2 class="font-display text-2xl text-white mb-4">Development History</h2>
           <p>
-            HexaFootball began as an experiment to answer a simple question: what if football was played like chess?
             Developed by Taka Studio, the project evolved through rapid prototyping into a full-scale strategy game,
             focusing on systemic depth, readability, and meaningful decisions every turn.
           </p>
@@ -144,26 +136,56 @@
 
         <section id="images" class="mb-16">
           <h2 class="font-display text-2xl mb-6">Images & Logos</h2>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
-              <img src="../HexaFootball_Steam_Capsule_1232x706.png" class="object-cover w-full h-full" alt="HexaFootball Capsule">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            
+            <div class="flex flex-col gap-3">
+              <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+                <img src="../HexaFootball_Steam_Capsule_1232 x 706.png" class="gallery-img object-cover w-full h-full" alt="Capsule Art">
+              </div>
+              <a href="../HexaFootball_Steam_Capsule_1232 x 706.png" download class="text-center py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">DOWNLOAD</a>
             </div>
-            <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
-              <img src="../SS.png" class="object-cover w-full h-full" alt="HexaFootball Screenshot">
+
+            <div class="flex flex-col gap-3">
+              <div class="aspect-video bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+                <img src="../SS.png" class="gallery-img object-cover w-full h-full" alt="Screenshot 1">
+              </div>
+              <a href="../SS.png" download class="text-center py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">DOWNLOAD</a>
             </div>
+
           </div>
-          <p class="mt-4 text-sm text-white/50 italic text-center">
-            Contact us for high-resolution screenshots, logos, and press assets.
-          </p>
         </section>
 
       </main>
     </div>
   </div>
 
+  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] p-4 cursor-zoom-out">
+    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl">
+  </div>
+
   <footer class="py-10 border-t border-white/10 bg-[#0b1724] text-center">
-    <p class="text-white/40 text-xs">© 2025 Taka Studio • HexaFootball Press Kit</p>
+    <p class="text-white/40 text-xs">© 2026 Taka Studio • HexaFootball Press Kit</p>
   </footer>
+
+  <script>
+    // Resim Büyütme Fonksiyonu
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryImgs = document.querySelectorAll('.gallery-img');
+
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    });
+  </script>
 
 </body>
 </html>
